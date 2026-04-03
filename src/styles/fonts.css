@@ -1,0 +1,20 @@
+/* Montserrat - Body and UI text */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* TAN-BUSTER Bold - Display headings */
+@font-face {
+  font-family: 'TAN-BUSTER';
+  src: url('https://fonts.cdnfonts.com/s/96742/TAN - BUSTER.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Signature Script - Labels and subheadings */
+@font-face {
+  font-family: 'Signature';
+  src: url('https://fonts.cdnfonts.com/s/14999/Signature.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
