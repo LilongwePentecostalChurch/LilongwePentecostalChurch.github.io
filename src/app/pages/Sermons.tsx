@@ -4,7 +4,7 @@ import { SectionFooter } from '../components/SectionFooter';
 import { SocialIcon } from '../components/SocialIcon';
 import { LPCLogo } from '../components/LPCLogo';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { sanityClient, urlFor } from '../lib/sanityClient';
+import { sanityClient, urlFor } from '../../lib/sanityClient';
 
 const fallbackSermons = [
   { title: "GROWING IN FAITH", image: "https://images.unsplash.com/photo-1560279800-8b23f487ce83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080", youtubeUrl: null },

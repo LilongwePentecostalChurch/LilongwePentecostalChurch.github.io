@@ -4,7 +4,7 @@ import { LPCLogo } from '../components/LPCLogo';
 import { SocialIcon } from '../components/SocialIcon';
 import { SectionFooter } from '../components/SectionFooter';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { sanityClient, urlFor } from '../lib/sanityClient';
+import { sanityClient, urlFor } from '../../lib/sanityClient';
 
 const socialLinks = [
   { platform: 'tiktok' as const, url: 'https://www.tiktok.com/@llpentecostalchurch?is_from_webapp=1&sender_device=pc' },

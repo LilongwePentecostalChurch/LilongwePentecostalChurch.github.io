@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import { SectionFooter } from '../components/SectionFooter';
 import { ChevronLeft, ChevronRight, X, Eye } from 'lucide-react';
-import { sanityClient, urlFor } from '../lib/sanityClient';
+import { sanityClient, urlFor } from '../../lib/sanityClient';
 
 interface GalleryImage {
   url: string;

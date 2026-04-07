@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { LPCLogo } from '../components/LPCLogo';
-import { sanityClient } from '../lib/sanityClient';
+import { sanityClient } from '../../lib/sanityClient';
 
 interface GivingMethod {
   method: string;
