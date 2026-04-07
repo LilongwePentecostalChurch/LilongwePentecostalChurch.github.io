@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Book } from 'lucide-react';
 import { MinistryTemplate } from './MinistryTemplate';
 import { ministriesData } from '../../data/ministriesData';
-import { sanityClient, urlFor } from '../../lib/sanityClient';
+import { sanityClient, urlFor } from '../../../lib/sanityClient';
 
 export function MinistryPage() {
   const { ministryId } = useParams<{ ministryId: string }>();
