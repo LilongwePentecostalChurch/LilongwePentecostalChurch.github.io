@@ -1,18 +1,16 @@
 import { createClient } from '@sanity/client'
-import imageUrlBuilder from '@sanity/image-url'
+import { createImageUrlBuilder } from '@sanity/image-url'
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
-// ⚠️ Replace YOUR_PROJECT_ID with your actual Sanity project ID
-// Find it at: https://sanity.io/manage → your LPC Church project
 export const sanityClient = createClient({
   projectId: 'nvtku4ax',
   dataset: 'production',
   apiVersion: '2024-01-01',
-  useCdn: true, // fast cached reads for public data
+  useCdn: true,
 })
 
 // Helper to build image URLs from Sanity image references
-const builder = imageUrlBuilder(sanityClient)
+const builder = createImageUrlBuilder(sanityClient)
 
 export function urlFor(source: SanityImageSource) {
   return builder.image(source)
@@ -20,7 +18,6 @@ export function urlFor(source: SanityImageSource) {
 
 // ── Typed fetch helpers ──────────────────────────────────────────
 
-// Latest sermons
 export async function getSermons(limit = 10) {
   return sanityClient.fetch(
     `*[_type == "sermon"] | order(date desc) [0...$limit] {
@@ -32,7 +29,6 @@ export async function getSermons(limit = 10) {
   )
 }
 
-// All sermon series
 export async function getSermonSeries() {
   return sanityClient.fetch(
     `*[_type == "sermonSeries"] | order(startDate desc) {
@@ -41,7 +37,6 @@ export async function getSermonSeries() {
   )
 }
 
-// Upcoming events
 export async function getUpcomingEvents() {
   return sanityClient.fetch(
     `*[_type == "event" && category == "upcoming"] | order(date asc) {
@@ -50,7 +45,6 @@ export async function getUpcomingEvents() {
   )
 }
 
-// Annual events
 export async function getAnnualEvents() {
   return sanityClient.fetch(
     `*[_type == "event" && category == "annual"] | order(date asc) {
@@ -59,7 +53,6 @@ export async function getAnnualEvents() {
   )
 }
 
-// Gallery by month (or all months)
 export async function getGallery(month?: string) {
   const filter = month
     ? `*[_type == "galleryMonth" && month == $month]`
@@ -67,7 +60,6 @@ export async function getGallery(month?: string) {
   return sanityClient.fetch(filter, month ? { month } : {})
 }
 
-// All staff / leadership
 export async function getStaff() {
   return sanityClient.fetch(
     `*[_type == "staffMember"] | order(order asc) {
@@ -76,7 +68,6 @@ export async function getStaff() {
   )
 }
 
-// Lead pastor only
 export async function getLeadPastor() {
   return sanityClient.fetch(
     `*[_type == "staffMember" && isLeadPastor == true][0] {
@@ -85,7 +76,6 @@ export async function getLeadPastor() {
   )
 }
 
-// Giving info
 export async function getGivingInfo() {
   return sanityClient.fetch(
     `*[_type == "givingInfo"][0] {

@@ -4,7 +4,7 @@ import { SectionFooter } from '../../components/SectionFooter';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 import { Shield, UserCog, Users, Church, Cross, ArrowDown } from 'lucide-react';
 import { ministriesData } from '../../data/ministriesData';
-import { sanityClient, urlFor } from '../../lib/sanityClient';
+import { sanityClient, urlFor } from '../../../lib/sanityClient';
 
 // Fallback hardcoded data
 const fallbackElders = [

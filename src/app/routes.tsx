@@ -11,16 +11,10 @@ import { MinistryPage } from './pages/ministries/MinistryPage';
 
 // About sub-pages
 import { OurStory } from './pages/about/OurStory';
-import { LeadPastor as AboutLeadPastor } from './pages/about/LeadPastor';
 import { TheLeadPastor } from './pages/about/TheLeadPastor';
 import { LeadershipTeam } from './pages/about/LeadershipTeam';
-import { PastoralTeam as AboutPastoralTeam } from './pages/about/PastoralTeam';
 import { WhatWeBelieve } from './pages/about/WhatWeBelieve';
 import { LPCAtAGlance } from './pages/about/LPCAtAGlance';
-import { EldersBoard } from './pages/about/EldersBoard';
-import { Deacons } from './pages/about/Deacons';
-import { MinistryLeaders } from './pages/about/MinistryLeaders';
-import { StaffDirectory } from './pages/about/StaffDirectory';
 
 // Sermons sub-pages
 import { Latest } from './pages/sermons/Latest';
@@ -60,7 +54,7 @@ import { TestimonyOfGiving } from './pages/give/TestimonyOfGiving';
 import { LeadPastor } from './pages/leadership/LeadPastor';
 import { PastoralTeam } from './pages/leadership/PastoralTeam';
 
-// Ministries placeholder
+// Ministries
 import { PlaceholderPage } from './components/PlaceholderPage';
 import { ParentResources as MinistriesParentResources } from './pages/ministries/ParentResources';
 import { VBS } from './pages/ministries/VBS';
@@ -85,7 +79,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'about/lead-pastor',
-        Component: AboutLeadPastor,
+        Component: TheLeadPastor,
+      },
+      {
+        path: 'about/the-lead-pastor',
+        Component: TheLeadPastor,
       },
       {
         path: 'about/leadership-team',
@@ -98,30 +96,6 @@ export const router = createBrowserRouter([
       {
         path: 'about/lpc-at-a-glance',
         Component: LPCAtAGlance,
-      },
-      {
-        path: 'about/the-lead-pastor',
-        Component: TheLeadPastor,
-      },
-      {
-        path: 'about/pastoral-team',
-        Component: AboutPastoralTeam,
-      },
-      {
-        path: 'about/elders-board',
-        Component: EldersBoard,
-      },
-      {
-        path: 'about/deacons',
-        Component: Deacons,
-      },
-      {
-        path: 'about/ministry-leaders',
-        Component: MinistryLeaders,
-      },
-      {
-        path: 'about/staff-directory',
-        Component: StaffDirectory,
       },
       // Sermons routes
       {
@@ -144,12 +118,11 @@ export const router = createBrowserRouter([
         path: 'sermons/devotionals',
         Component: Devotionals,
       },
-      // Ministries placeholder route
+      // Ministries routes
       {
         path: 'ministries',
         element: <PlaceholderPage title="Ministries" />,
       },
-      // Sunday School sub-routes (must come before the dynamic route)
       {
         path: 'ministries/sunday-school/lpc-kids',
         Component: LPCKidsPage,
@@ -162,7 +135,6 @@ export const router = createBrowserRouter([
         path: 'ministries/sunday-school/vbs',
         Component: VBS,
       },
-      // Dynamic ministry route (catches all ministries including sunday-school)
       {
         path: 'ministries/:ministryId',
         Component: MinistryPage,
