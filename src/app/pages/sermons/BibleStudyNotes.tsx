@@ -1,8 +1,8 @@
 import { Link } from 'react-router';
 import { FileText, Download, Eye, Youtube } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
-import { sanityClient } from '../../lib/sanityClient';
+import { ImageWithFallback } from '../../../components/figma/ImageWithFallback';
+import { sanityClient } from '../../../lib/sanityClient';
 
 interface BibleStudyNote {
   _id: string;
