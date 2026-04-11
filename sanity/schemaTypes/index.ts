@@ -5,6 +5,7 @@ import galleryMonth from './galleryMonth'
 import staffMember from './staffMember'
 import givingInfo from './givingInfo'
 import ministry from './ministry'
+import bibleStudyNote from './bibleStudyNote'
 
 export const schemaTypes = [
   sermon,
@@ -14,4 +15,5 @@ export const schemaTypes = [
   staffMember,
   givingInfo,
   ministry,
+  bibleStudyNote,
 ]
