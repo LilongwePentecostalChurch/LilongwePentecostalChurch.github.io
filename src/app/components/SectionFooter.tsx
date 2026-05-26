@@ -28,7 +28,7 @@ export function SectionFooter() {
 
       {/* Logo center */}
       <div>
-        <LPCLogo size={70} />
+        <LPCLogo size={100} />
       </div>
 
       {/* Wordmark right */}

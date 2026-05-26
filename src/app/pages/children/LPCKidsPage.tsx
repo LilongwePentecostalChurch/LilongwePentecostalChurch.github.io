@@ -1,16 +1,47 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import { 
+import {
   Shield, Star, Cross, UserPlus, Clipboard, Sparkles as StarIcon,
   Check, Phone, Mail, MessageCircle, MapPin, Clock, BookOpen, Users, Calendar,
   ChevronLeft, ChevronRight, X, Expand, Home, Baby, Lightbulb, Book, Flower2, Zap, Heart, Globe, Hand
 } from 'lucide-react';
 import { SocialIcon } from '../../components/SocialIcon';
+import { sendFormEmail } from '../../../lib/emailService';
 
 export function LPCKidsPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [loadedPhotos, setLoadedPhotos] = useState(6);
+
+  // Kids contact form state
+  const [kidsForm, setKidsForm] = useState({ parentName: '', childName: '', childAge: '', phone: '', email: '', message: '' });
+  const [kidsSending, setKidsSending] = useState(false);
+  const [kidsSubmitted, setKidsSubmitted] = useState(false);
+  const [kidsError, setKidsError] = useState('');
+
+  const handleKidsSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setKidsSending(true);
+    setKidsError('');
+    try {
+      await sendFormEmail({
+        form_type:  'LPC Kids Registration',
+        from_name:  kidsForm.parentName,
+        from_email: kidsForm.email,
+        phone:      kidsForm.phone,
+        details: [
+          `Child's Name: ${kidsForm.childName}`,
+          `Child's Age: ${kidsForm.childAge}`,
+          `Message: ${kidsForm.message || 'None'}`,
+        ].join('\n'),
+      });
+      setKidsSubmitted(true);
+    } catch {
+      setKidsError('Something went wrong. Please try again or call us directly.');
+    } finally {
+      setKidsSending(false);
+    }
+  };
 
   const galleryPhotos = [
     { src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=200&q=80', caption: 'Children on Stage with Teacher' },
@@ -743,67 +774,92 @@ export function LPCKidsPage() {
 
             {/* Right - Contact Form */}
             <div className="p-8 bg-[#1A0500]/60 border border-[#E8821A] rounded-2xl">
-              <form className="space-y-4">
+              {kidsSubmitted ? (
+                <div className="text-center py-8">
+                  <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#E8821A]/10 flex items-center justify-center">
+                    <Check className="text-[#E8821A]" size={26} />
+                  </div>
+                  <h3 className="font-['TAN-BUSTER'] text-white text-2xl tracking-wide mb-3">REGISTERED!</h3>
+                  <p className="font-['Montserrat'] text-white/70 text-sm leading-relaxed">
+                    Thank you, <span className="text-white font-bold">{kidsForm.parentName}</span>! We've received your registration for <span className="text-white font-bold">{kidsForm.childName}</span> and will be in touch within 24 hours.
+                  </p>
+                </div>
+              ) : (
+              <form onSubmit={handleKidsSubmit} className="space-y-4">
                 <div>
-                  <input 
+                  <input
                     type="text"
                     placeholder="Parent Full Name"
+                    value={kidsForm.parentName}
+                    onChange={(e) => setKidsForm({ ...kidsForm, parentName: e.target.value })}
                     className="w-full px-4 py-3 bg-[#0A0200] border border-[#E8821A]/30 rounded-lg text-white font-['Montserrat'] focus:border-[#E8821A] focus:outline-none"
+                    required
                   />
                 </div>
                 <div>
-                  <input 
+                  <input
                     type="text"
                     placeholder="Child's Name"
+                    value={kidsForm.childName}
+                    onChange={(e) => setKidsForm({ ...kidsForm, childName: e.target.value })}
                     className="w-full px-4 py-3 bg-[#0A0200] border border-[#E8821A]/30 rounded-lg text-white font-['Montserrat'] focus:border-[#E8821A] focus:outline-none"
+                    required
                   />
                 </div>
                 <div>
-                  <input 
+                  <input
                     type="number"
                     placeholder="Child's Age"
+                    value={kidsForm.childAge}
+                    onChange={(e) => setKidsForm({ ...kidsForm, childAge: e.target.value })}
                     className="w-full px-4 py-3 bg-[#0A0200] border border-[#E8821A]/30 rounded-lg text-white font-['Montserrat'] focus:border-[#E8821A] focus:outline-none"
+                    required
                   />
                 </div>
                 <div>
-                  <input 
+                  <input
                     type="tel"
                     placeholder="Phone Number"
+                    value={kidsForm.phone}
+                    onChange={(e) => setKidsForm({ ...kidsForm, phone: e.target.value })}
                     className="w-full px-4 py-3 bg-[#0A0200] border border-[#E8821A]/30 rounded-lg text-white font-['Montserrat'] focus:border-[#E8821A] focus:outline-none"
+                    required
                   />
                 </div>
                 <div>
-                  <input 
+                  <input
                     type="email"
                     placeholder="Email Address"
+                    value={kidsForm.email}
+                    onChange={(e) => setKidsForm({ ...kidsForm, email: e.target.value })}
                     className="w-full px-4 py-3 bg-[#0A0200] border border-[#E8821A]/30 rounded-lg text-white font-['Montserrat'] focus:border-[#E8821A] focus:outline-none"
+                    required
                   />
                 </div>
                 <div>
-                  <input 
-                    type="text"
-                    value="LPC Kids"
-                    disabled
-                    className="w-full px-4 py-3 bg-[#0A0200]/50 border border-[#E8821A]/30 rounded-lg text-white/50 font-['Montserrat'] cursor-not-allowed"
-                  />
-                </div>
-                <div>
-                  <textarea 
-                    placeholder="Message or Question"
+                  <textarea
+                    placeholder="Message or Question (optional)"
+                    value={kidsForm.message}
+                    onChange={(e) => setKidsForm({ ...kidsForm, message: e.target.value })}
                     rows={4}
                     className="w-full px-4 py-3 bg-[#0A0200] border border-[#E8821A]/30 rounded-lg text-white font-['Montserrat'] focus:border-[#E8821A] focus:outline-none resize-none"
                   />
                 </div>
-                <button 
+                {kidsError && (
+                  <p className="font-['Montserrat'] text-red-400 text-sm text-center">{kidsError}</p>
+                )}
+                <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-[#E8821A] text-white rounded-full font-['Montserrat'] font-bold hover:bg-[#C94A1A] transition-colors"
+                  disabled={kidsSending}
+                  className="w-full px-8 py-4 bg-[#E8821A] text-white rounded-full font-['Montserrat'] font-bold hover:bg-[#C94A1A] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {kidsSending ? 'Sending…' : 'Register My Child'}
                 </button>
                 <p className="text-center font-['Montserrat'] text-white/70 text-sm">
                   We will get back to you within 24 hours
                 </p>
               </form>
+              )}
             </div>
           </div>
         </div>

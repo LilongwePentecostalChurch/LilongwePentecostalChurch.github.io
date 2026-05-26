@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
+import { BookOpen } from 'lucide-react';
 import { SectionFooter } from '../../components/SectionFooter';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 import { ministriesData } from '../../data/ministriesData';
-import { sanityClient } from '../../../lib/sanityClient';
+import { sanityClient, urlFor } from '../../../lib/sanityClient';
 
 const fallbackElders = [
   { name: 'Rex Kuyeli', image: 'https://images.unsplash.com/photo-1742436448498-94c4790e846d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400' },
@@ -42,14 +43,31 @@ interface StaffMember {
   image: string;
 }
 
+interface Pastor {
+  _id: string;
+  name: string;
+  title: string;
+  shortBio?: string;
+  photo?: any;
+}
+
+const PLACEHOLDER_IMG = 'https://images.unsplash.com/photo-1560279800-8b23f487ce83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400';
+
+const fallbackPastors: Pastor[] = [
+  { _id: '1', name: '[PASTOR NAME]', title: 'Pastor', shortBio: 'Serving the LPC family with dedication and faith.' },
+  { _id: '2', name: '[PASTOR NAME]', title: 'Pastor', shortBio: 'Serving the LPC family with dedication and faith.' },
+  { _id: '3', name: '[PASTOR NAME]', title: 'Pastor', shortBio: 'Serving the LPC family with dedication and faith.' },
+];
+
 export function LeadershipTeam() {
   const [elders, setElders] = useState<StaffMember[]>(fallbackElders);
   const [deacons, setDeacons] = useState<StaffMember[]>(fallbackDeacons);
+  const [pastors, setPastors] = useState<Pastor[]>(fallbackPastors);
 
   useEffect(() => {
     sanityClient
-      .fetch(`*[_type == "staffMember" && (department == "elders" || department == "deacons")] | order(order asc) {
-        name, department, "photoUrl": photo.asset->url
+      .fetch(`*[_type == "staffMember" && (department == "elders" || department == "deacons" || department == "pastors")] | order(order asc) {
+        _id, name, title, department, shortBio, photo, "photoUrl": photo.asset->url
       }`)
       .then((data: any[]) => {
         if (!data || data.length === 0) return;
@@ -61,8 +79,10 @@ export function LeadershipTeam() {
           name: s.name,
           image: s.photoUrl ?? '',
         }));
+        const sanityPastors = data.filter(s => s.department === 'pastors');
         if (sanityElders.length > 0) setElders(sanityElders);
         if (sanityDeacons.length > 0) setDeacons(sanityDeacons);
+        if (sanityPastors.length > 0) setPastors(sanityPastors);
       })
       .catch(() => {});
   }, []);
@@ -96,6 +116,43 @@ export function LeadershipTeam() {
             <p className="font-['Signature'] text-3xl text-[#E8821A] mb-4">Serving with vision, integrity and faith</p>
             <h1 className="font-['TAN-BUSTER'] text-4xl sm:text-5xl lg:text-6xl text-white mb-6 tracking-wider">LEADERSHIP TEAM</h1>
             <div className="w-20 h-1 bg-[#E8821A] mx-auto"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pastors Section */}
+      <section className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#1A0500]"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#E8821A]/10 via-[#7A1A0A]/10 to-transparent"></div>
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-['Signature'] text-3xl text-[#E8821A] mb-4">Pastoral Team</p>
+            <h2 className="font-['TAN-BUSTER'] text-4xl sm:text-5xl text-white tracking-wider mb-4">OUR PASTORS</h2>
+            <p className="font-['Montserrat'] text-white/80 max-w-2xl mx-auto">Shepherding the LPC family with God's love and wisdom</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {pastors.map((pastor) => (
+              <div key={pastor._id} className="group relative bg-[#1A0500]/80 backdrop-blur-sm rounded-lg overflow-hidden border-2 border-[#E8821A]/30 hover:border-[#E8821A] hover:shadow-[0_0_30px_rgba(232,130,26,0.4)] transition-all duration-300">
+                <div className="aspect-square relative overflow-hidden">
+                  <ImageWithFallback
+                    src={pastor.photo ? urlFor(pastor.photo).width(400).url() : PLACEHOLDER_IMG}
+                    alt={pastor.name}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A0500] via-[#1A0500]/60 to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-[#E8821A] rounded-full flex items-center justify-center shadow-lg">
+                    <BookOpen className="text-white" size={24} />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="font-['TAN-BUSTER'] text-xl text-white mb-2 tracking-wide">{pastor.name}</h3>
+                    <p className="font-['Signature'] text-lg text-[#E8821A] mb-2">{pastor.title}</p>
+                    {pastor.shortBio && (
+                      <p className="font-['Montserrat'] text-sm text-white/90">{pastor.shortBio}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -189,8 +246,8 @@ export function LeadershipTeam() {
           <h2 className="font-['TAN-BUSTER'] text-4xl sm:text-5xl text-white mb-6 tracking-wider">SERVE WITH US AT LPC</h2>
           <p className="font-['Montserrat'] text-lg text-white/90 mb-8 leading-relaxed">God has given every believer a gift. There is a place for you to serve.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/get-involved" className="font-['Montserrat'] px-8 py-4 bg-white text-[#E8821A] rounded-lg hover:bg-white/90 transition-all duration-300 shadow-lg">Join a Ministry</Link>
-            <Link to="/contact" className="font-['Montserrat'] px-8 py-4 bg-transparent text-white border-2 border-white rounded-lg hover:bg-white/10 transition-all duration-300 shadow-lg">Contact Us</Link>
+            <Link to="/connect/plan-your-visit#contact" className="font-['Montserrat'] px-8 py-4 bg-white text-[#E8821A] rounded-lg hover:bg-white/90 transition-all duration-300 shadow-lg">Join a Ministry</Link>
+            <Link to="/connect/plan-your-visit#contact" className="font-['Montserrat'] px-8 py-4 bg-transparent text-white border-2 border-white rounded-lg hover:bg-white/10 transition-all duration-300 shadow-lg">Contact Us</Link>
           </div>
         </div>
       </section>

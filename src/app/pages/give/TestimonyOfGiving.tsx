@@ -26,8 +26,6 @@ export function TestimonyOfGiving() {
           <div className="flex items-center gap-2 text-white/60 mb-8 font-['Montserrat'] text-sm">
             <Link to="/" className="hover:text-[#E8821A] transition-colors">Home</Link>
             <span>/</span>
-            <Link to="/give" className="hover:text-[#E8821A] transition-colors">Give</Link>
-            <span>/</span>
             <span className="text-[#E8821A]">Testimony of Giving</span>
           </div>
 

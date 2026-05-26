@@ -25,6 +25,7 @@ export default defineType({
       options: {
         list: [
           { title: 'Lead Pastor', value: 'lead-pastor' },
+          { title: 'Pastors', value: 'pastors' },
           { title: 'Elders', value: 'elders' },
           { title: 'Deacons', value: 'deacons' },
           { title: 'Ministry Leaders', value: 'ministry-leaders' },
@@ -59,6 +60,11 @@ export default defineType({
     defineField({
       name: 'email',
       title: 'Contact Email',
+      type: 'string',
+    }),
+    defineField({
+      name: 'phone',
+      title: 'Contact Phone',
       type: 'string',
     }),
     defineField({

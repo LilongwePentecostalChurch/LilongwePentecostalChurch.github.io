@@ -6,6 +6,7 @@ import staffMember from './staffMember'
 import givingInfo from './givingInfo'
 import ministry from './ministry'
 import bibleStudyNote from './bibleStudyNote'
+import parentResource from './parentResource'
 
 export const schemaTypes = [
   sermon,
@@ -16,4 +17,5 @@ export const schemaTypes = [
   givingInfo,
   ministry,
   bibleStudyNote,
+  parentResource,
 ]

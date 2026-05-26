@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { Heart, Users, Home } from 'lucide-react';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 import { useState } from 'react';
+import { sendFormEmail } from '../../../lib/emailService';
 
 export function CounsellingPrayer() {
   const [prayerRequest, setPrayerRequest] = useState({
@@ -30,9 +31,31 @@ export function CounsellingPrayer() {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Prayer request submitted:', prayerRequest);
+    setSending(true);
+    setError('');
+    try {
+      await sendFormEmail({
+        form_type:  'Prayer / Counselling Request',
+        from_name:  prayerRequest.fullName,
+        from_email: prayerRequest.email,
+        phone:      prayerRequest.phone,
+        details: [
+          `Prayer Request: ${prayerRequest.request}`,
+          `Confidential: ${prayerRequest.confidential ? 'Yes — please keep private' : 'No'}`,
+        ].join('\n'),
+      });
+      setSubmitted(true);
+    } catch {
+      setError('Something went wrong. Please try again or call us directly.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -59,8 +82,6 @@ export function CounsellingPrayer() {
           {/* Breadcrumbs */}
           <div className="flex items-center justify-center gap-2 mb-6 font-['Montserrat'] text-sm text-white/70">
             <Link to="/" className="hover:text-[#E8821A] transition-colors">Home</Link>
-            <span>›</span>
-            <Link to="/connect" className="hover:text-[#E8821A] transition-colors">Connect</Link>
             <span>›</span>
             <span className="text-white">Counselling and Prayer</span>
           </div>
@@ -102,6 +123,17 @@ export function CounsellingPrayer() {
 
             {/* Right - Form */}
             <div>
+              {submitted ? (
+                <div className="bg-[#150800]/60 border border-[#E8821A]/40 rounded-lg p-10 text-center">
+                  <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#E8821A]/10 flex items-center justify-center">
+                    <Heart className="text-[#E8821A]" size={26} />
+                  </div>
+                  <h3 className="font-['TAN-BUSTER'] text-white text-2xl tracking-wide mb-3">REQUEST RECEIVED</h3>
+                  <p className="font-['Montserrat'] text-white/70 text-sm leading-relaxed">
+                    Thank you, <span className="text-white font-bold">{prayerRequest.fullName}</span>. Our prayer team will be lifting your request before God. You are not alone.
+                  </p>
+                </div>
+              ) : (
               <form onSubmit={handleSubmit} className="bg-[#150800]/60 backdrop-blur-sm border border-[#E8821A]/30 rounded-lg p-6 space-y-4">
                 <div>
                   <label className="block font-['Montserrat'] text-white/90 text-sm mb-2">
@@ -168,17 +200,22 @@ export function CounsellingPrayer() {
                   </label>
                 </div>
 
+                {error && (
+                  <p className="font-['Montserrat'] text-red-400 text-sm text-center">{error}</p>
+                )}
                 <button
                   type="submit"
-                  className="w-full px-8 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all"
+                  disabled={sending}
+                  className="w-full px-8 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Submit Prayer Request
+                  {sending ? 'Sending…' : 'Submit Prayer Request'}
                 </button>
 
                 <p className="font-['Montserrat'] text-white/70 text-xs text-center">
                   All requests are treated with complete confidentiality and prayed over by our team.
                 </p>
               </form>
+              )}
             </div>
           </div>
         </div>

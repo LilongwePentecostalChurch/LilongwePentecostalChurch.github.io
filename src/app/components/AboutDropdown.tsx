@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { BookOpen, User, Users, Cross, BarChart } from 'lucide-react';
+import { BookOpen, User, Users, Cross, BarChart, Briefcase } from 'lucide-react';
 
 interface MenuItem {
   icon: React.ElementType;
@@ -39,6 +39,12 @@ const menuItems: MenuItem[] = [
     description: 'Key facts, figures and milestones of Lilongwe Pentecostal Church',
     path: '/about/lpc-at-a-glance',
   },
+  {
+    icon: Briefcase,
+    title: 'Staff',
+    description: 'Meet our church administrators and support staff',
+    path: '/about/staff',
+  },
 ];
 
 interface AboutDropdownProps {
@@ -62,20 +68,29 @@ export function AboutDropdown({ isOpen, onClose }: AboutDropdownProps) {
               ABOUT LPC
             </h2>
           </div>
-          <Link
-            to="/connect/plan-your-visit"
-            onClick={onClose}
-            className="font-['Montserrat'] text-white hover:text-[#E8821A] transition-colors text-sm"
-          >
-            Want to visit us? Plan your trip →
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              to="/about"
+              onClick={onClose}
+              className="font-['Montserrat'] text-white hover:text-[#E8821A] transition-colors text-sm"
+            >
+              About overview →
+            </Link>
+            <Link
+              to="/connect/plan-your-visit"
+              onClick={onClose}
+              className="font-['Montserrat'] text-white hover:text-[#E8821A] transition-colors text-sm"
+            >
+              Plan your visit →
+            </Link>
+          </div>
         </div>
 
         {/* Thin divider */}
         <div className="h-px bg-white/10 mb-6" />
 
-        {/* Grid of menu items - 4 columns */}
-        <div className="grid grid-cols-4 gap-4">
+        {/* Grid of menu items - 3 columns */}
+        <div className="grid grid-cols-3 gap-4">
           {menuItems.map((item) => {
             const Icon = item.icon;
             return (
@@ -99,10 +114,6 @@ export function AboutDropdown({ isOpen, onClose }: AboutDropdownProps) {
               </Link>
             );
           })}
-          
-          {/* Empty cell for the 6th spot */}
-          <div className="p-4 rounded-lg opacity-0 pointer-events-none">
-          </div>
         </div>
       </div>
     </div>
