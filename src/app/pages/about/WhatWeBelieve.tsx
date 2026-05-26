@@ -160,7 +160,7 @@ export function WhatWeBelieve() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
-              to="/connect/counselling-prayer"
+              to="/connect/plan-your-visit#contact"
               className="px-8 py-3 bg-white text-[#E8821A] font-['Montserrat'] font-bold rounded-full hover:bg-white/90 transition-all"
             >
               Contact Us

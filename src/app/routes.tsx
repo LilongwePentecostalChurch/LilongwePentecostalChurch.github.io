@@ -6,7 +6,6 @@ import { Sermons } from './pages/Sermons';
 import { Leadership } from './pages/Leadership';
 import { Events } from './pages/Events';
 import { Gallery } from './pages/Gallery';
-import { Give } from './pages/Give';
 import { MinistryPage } from './pages/ministries/MinistryPage';
 
 // About sub-pages
@@ -15,10 +14,9 @@ import { TheLeadPastor } from './pages/about/TheLeadPastor';
 import { LeadershipTeam } from './pages/about/LeadershipTeam';
 import { WhatWeBelieve } from './pages/about/WhatWeBelieve';
 import { LPCAtAGlance } from './pages/about/LPCAtAGlance';
+import { Staff } from './pages/about/Staff';
 
 // Sermons sub-pages
-import { Latest } from './pages/sermons/Latest';
-import { Series } from './pages/sermons/Series';
 import { BibleStudyNotes } from './pages/sermons/BibleStudyNotes';
 import { Devotionals } from './pages/sermons/Devotionals';
 
@@ -97,18 +95,14 @@ export const router = createBrowserRouter([
         path: 'about/lpc-at-a-glance',
         Component: LPCAtAGlance,
       },
+      {
+        path: 'about/staff',
+        Component: Staff,
+      },
       // Sermons routes
       {
         path: 'sermons',
         Component: Sermons,
-      },
-      {
-        path: 'sermons/latest',
-        Component: Latest,
-      },
-      {
-        path: 'sermons/series',
-        Component: Series,
       },
       {
         path: 'sermons/bible-study-notes',
@@ -158,10 +152,6 @@ export const router = createBrowserRouter([
       },
       // Connect routes
       {
-        path: 'connect',
-        element: <PlaceholderPage title="Connect" />,
-      },
-      {
         path: 'connect/plan-your-visit',
         Component: PlanYourVisit,
       },
@@ -200,10 +190,6 @@ export const router = createBrowserRouter([
       },
       // Community routes
       {
-        path: 'community',
-        element: <PlaceholderPage title="Community" />,
-      },
-      {
         path: 'community/city-outreach',
         Component: CityOutreach,
       },
@@ -225,10 +211,6 @@ export const router = createBrowserRouter([
         Component: Gallery,
       },
       // Give routes
-      {
-        path: 'give',
-        Component: Give,
-      },
       {
         path: 'give/tithes-and-offering',
         Component: TithesAndOffering,

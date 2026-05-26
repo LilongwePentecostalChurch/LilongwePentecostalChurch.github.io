@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { PlayCircle, Layers, BookOpen, Sun } from 'lucide-react';
+import { PlayCircle, BookOpen, Sun } from 'lucide-react';
 
 interface MenuItem {
   icon: React.ElementType;
@@ -11,15 +11,9 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     icon: PlayCircle,
-    title: 'Latest Sermons',
-    description: 'Watch and listen to the most recent Sunday messages from LPC',
-    path: '/sermons/latest',
-  },
-  {
-    icon: Layers,
-    title: 'Sermon Series',
-    description: 'Browse all teaching series grouped by topic and season',
-    path: '/sermons/series',
+    title: 'Sermons',
+    description: 'Watch and listen to the latest Sunday messages from LPC',
+    path: '/sermons',
   },
   {
     icon: BookOpen,
@@ -69,8 +63,8 @@ export function SermonsDropdown({ isOpen, onClose }: SermonsDropdownProps) {
         {/* Thin divider */}
         <div className="h-px bg-white/10 mb-6" />
 
-        {/* Grid of menu items - 4 columns */}
-        <div className="grid grid-cols-4 gap-4">
+        {/* Grid of menu items - 3 columns */}
+        <div className="grid grid-cols-3 gap-4">
           {menuItems.map((item) => {
             const Icon = item.icon;
             return (

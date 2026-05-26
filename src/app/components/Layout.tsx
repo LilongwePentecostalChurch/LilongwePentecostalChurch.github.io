@@ -112,7 +112,7 @@ export function Layout() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               <Link to="/" className="flex-shrink-0">
-                <LPCLogo size={60} />
+                <LPCLogo size={55} />
               </Link>
 
               <div className="hidden md:flex items-center gap-8">
@@ -150,7 +150,7 @@ export function Layout() {
 
               <div className="hidden md:flex items-center">
                 <Link
-                  to="/"
+                  to="/connect/plan-your-visit"
                   className="px-6 py-2 bg-[#E8821A] text-white rounded-full font-bold hover:bg-[#C94A1A] transition-colors"
                 >
                   Join Us Sunday
@@ -254,7 +254,7 @@ export function Layout() {
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 mb-12">
           <div>
-            <LPCLogo size={80} />
+            <LPCLogo size={120} />
             <p className="font-['Montserrat'] italic text-white/80 mt-4">
               Christ Is The Answer
             </p>
@@ -264,7 +264,18 @@ export function Layout() {
               QUICK LINKS
             </h3>
             <div className="space-y-2">
-              {navLinks.map((link) => (
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About LPC', path: '/about' },
+                { name: 'Sermons', path: '/sermons' },
+                { name: 'Events', path: '/events' },
+                { name: 'Gallery', path: '/gallery' },
+                { name: 'Leadership', path: '/about/leadership-team' },
+                { name: 'Plan Your Visit', path: '/connect/plan-your-visit' },
+                { name: 'Give / Tithes & Offering', path: '/give/tithes-and-offering' },
+                { name: 'Bible Study Notes', path: '/sermons/bible-study-notes' },
+                { name: 'Devotionals', path: '/sermons/devotionals' },
+              ].map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}

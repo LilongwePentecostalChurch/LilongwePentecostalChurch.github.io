@@ -46,8 +46,6 @@ export function CityOutreach() {
           <div className="flex items-center justify-center gap-2 mb-6 font-['Montserrat'] text-sm text-white/70">
             <Link to="/" className="hover:text-[#E8821A] transition-colors">Home</Link>
             <span>›</span>
-            <Link to="/community" className="hover:text-[#E8821A] transition-colors">Community</Link>
-            <span>›</span>
             <span className="text-white">City Outreach</span>
           </div>
 

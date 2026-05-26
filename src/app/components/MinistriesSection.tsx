@@ -1,4 +1,5 @@
 import { Book, Flower2, Zap, Shield, Heart, Globe, Hand } from 'lucide-react';
+import { Link } from 'react-router';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SectionFooter } from './SectionFooter';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from './ui/carousel';
@@ -263,9 +264,12 @@ export function MinistriesSection() {
             <button className="px-10 py-4 bg-[#1A0500] text-white rounded-full font-['Montserrat'] font-bold hover:bg-[#E8821A] hover:scale-105 transition-all duration-200 shadow-lg">
               Explore All Ministries
             </button>
-            <button className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-['Montserrat'] font-bold hover:bg-white hover:text-[#7A1A0A] transition-all duration-200">
+            <Link
+              to="/connect/plan-your-visit#contact"
+              className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-['Montserrat'] font-bold hover:bg-white hover:text-[#7A1A0A] transition-all duration-200"
+            >
               Contact Us
-            </button>
+            </Link>
           </div>
           <p className="font-['Montserrat'] text-white/80 text-sm">
             Speak to any of our pastors after Sunday service to get connected.

@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Clock, MapPin, Users, Coffee, ChevronDown } from 'lucide-react';
+import { Clock, MapPin, Users, Coffee, ChevronDown, Phone, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 
@@ -105,8 +105,6 @@ export function PlanYourVisit() {
           {/* Breadcrumbs */}
           <div className="flex items-center justify-center gap-2 mb-6 font-['Montserrat'] text-sm text-white/70">
             <Link to="/" className="hover:text-[#E8821A] transition-colors">Home</Link>
-            <span>›</span>
-            <Link to="/connect" className="hover:text-[#E8821A] transition-colors">Connect</Link>
             <span>›</span>
             <span className="text-white">Plan Your Visit</span>
           </div>
@@ -310,6 +308,58 @@ export function PlanYourVisit() {
             <button className="px-8 py-3 bg-white text-[#E8821A] font-['Montserrat'] font-bold rounded-full hover:bg-white/90 transition-all">
               Fill In Volunteer Form
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Us Section */}
+      <section
+        id="contact"
+        className="relative py-20 px-6 overflow-hidden"
+        style={{ backgroundColor: '#150800' }}
+      >
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="font-['Signature'] text-[#E8821A] text-2xl italic mb-4">We'd love to hear from you</p>
+            <h2 className="font-['TAN-BUSTER'] text-white text-4xl tracking-wide mb-4">CONTACT US</h2>
+            <div className="w-20 h-1 bg-[#E8821A] mx-auto"></div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <a
+              href="tel:+265XXXXXXXXX"
+              className="group bg-[#1A0500]/60 backdrop-blur-sm border border-[#E8821A]/30 rounded-lg p-8 text-center hover:border-[#E8821A] hover:shadow-[0_0_20px_rgba(232,130,26,0.3)] transition-all"
+            >
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#E8821A]/10 flex items-center justify-center group-hover:bg-[#E8821A]/20 transition-all">
+                <Phone className="text-[#E8821A]" size={28} />
+              </div>
+              <h3 className="font-['TAN-BUSTER'] text-white text-xl tracking-wide mb-2">CALL US</h3>
+              <p className="font-['Montserrat'] text-[#E8821A] font-bold">+265 XXX XXX XXX</p>
+            </a>
+
+            <a
+              href="mailto:info@lpc.org.mw"
+              className="group bg-[#1A0500]/60 backdrop-blur-sm border border-[#E8821A]/30 rounded-lg p-8 text-center hover:border-[#E8821A] hover:shadow-[0_0_20px_rgba(232,130,26,0.3)] transition-all"
+            >
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#E8821A]/10 flex items-center justify-center group-hover:bg-[#E8821A]/20 transition-all">
+                <Mail className="text-[#E8821A]" size={28} />
+              </div>
+              <h3 className="font-['TAN-BUSTER'] text-white text-xl tracking-wide mb-2">EMAIL US</h3>
+              <p className="font-['Montserrat'] text-[#E8821A] font-bold">info@lpc.org.mw</p>
+            </a>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Lilongwe+Pentecostal+Church+M1+Road+Lilongwe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-[#1A0500]/60 backdrop-blur-sm border border-[#E8821A]/30 rounded-lg p-8 text-center hover:border-[#E8821A] hover:shadow-[0_0_20px_rgba(232,130,26,0.3)] transition-all"
+            >
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#E8821A]/10 flex items-center justify-center group-hover:bg-[#E8821A]/20 transition-all">
+                <MapPin className="text-[#E8821A]" size={28} />
+              </div>
+              <h3 className="font-['TAN-BUSTER'] text-white text-xl tracking-wide mb-2">FIND US</h3>
+              <p className="font-['Montserrat'] text-[#E8821A] font-bold">3Q5J+43X, M1 Road<br />Area 18A, Lilongwe</p>
+            </a>
           </div>
         </div>
       </section>

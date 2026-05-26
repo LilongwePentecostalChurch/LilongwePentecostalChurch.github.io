@@ -64,8 +64,6 @@ export function CareAndWelfare() {
           <div className="flex items-center justify-center gap-2 mb-6 font-['Montserrat'] text-sm text-white/70">
             <Link to="/" className="hover:text-[#E8821A] transition-colors">Home</Link>
             <span>›</span>
-            <Link to="/community" className="hover:text-[#E8821A] transition-colors">Community</Link>
-            <span>›</span>
             <span className="text-white">Care and Welfare</span>
           </div>
 
@@ -193,9 +191,12 @@ export function CareAndWelfare() {
             <p className="font-['Montserrat'] text-white text-lg mb-6">
               Join us in serving the most vulnerable members of our community.
             </p>
-            <button className="px-8 py-3 bg-white text-[#E8821A] font-['Montserrat'] font-bold rounded-full hover:bg-white/90 transition-all">
+            <Link
+              to="/connect/plan-your-visit#contact"
+              className="px-8 py-3 bg-white text-[#E8821A] font-['Montserrat'] font-bold rounded-full hover:bg-white/90 transition-all"
+            >
               Get Involved Today
-            </button>
+            </Link>
           </div>
         </div>
       </section>

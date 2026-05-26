@@ -33,7 +33,7 @@ const carouselCards: CarouselCard[] = [
     heading: 'STRONGER IN THE WORD',
     subtitle: 'Deep Scripture. Sound Doctrine. Real Community.',
     buttonText: 'Join Us',
-    buttonLink: '/about',
+    buttonLink: '/connect/plan-your-visit#contact',
     imageUrl: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiaWJsZSUyMHN0dWR5JTIwZ3JvdXB8ZW58MXx8fHwxNzc0MDA0NTA3fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
@@ -49,7 +49,7 @@ const carouselCards: CarouselCard[] = [
     heading: 'THE NEXT GENERATION IS RISING',
     subtitle: 'Bold faith for young people in Lilongwe',
     buttonText: 'Get Involved',
-    buttonLink: '/about',
+    buttonLink: '/connect/plan-your-visit#contact',
     imageUrl: 'https://images.unsplash.com/photo-1769755411779-e4c43e7b7742?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjB5b3V0aCUyMGdhdGhlcmluZ3xlbnwxfHx8fDE3NzQwMzc3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {

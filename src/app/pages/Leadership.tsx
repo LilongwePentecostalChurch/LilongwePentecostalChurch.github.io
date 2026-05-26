@@ -38,7 +38,7 @@ export function Leadership() {
   }, []);
 
   const bishop = staff.find(s => s.isLeadPastor);
-  const pastors = staff.filter(s => s.department === 'elders' ? false : !s.isLeadPastor && s.department !== 'deacons' && s.department !== 'ministry-leaders');
+  const pastors = staff.filter(s => s.department === 'pastors');
   const elders = staff.filter(s => s.department === 'elders');
   const deacons = staff.filter(s => s.department === 'deacons');
   const ministryLeaders = staff.filter(s => s.department === 'ministry-leaders');

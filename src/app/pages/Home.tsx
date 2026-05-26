@@ -124,7 +124,7 @@ export function Home() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-          <LPCLogo size={100} />
+          <LPCLogo size={90} />
         </div>
 
         <div className="absolute bottom-8 right-8 z-10 hidden lg:block text-right">
