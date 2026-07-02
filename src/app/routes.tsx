@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, Navigate } from 'react-router';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
@@ -152,6 +152,10 @@ export const router = createBrowserRouter([
       },
       // Connect routes
       {
+        path: 'connect',
+        element: <Navigate to="/connect/plan-your-visit" replace />,
+      },
+      {
         path: 'connect/plan-your-visit',
         Component: PlanYourVisit,
       },
@@ -190,6 +194,10 @@ export const router = createBrowserRouter([
       },
       // Community routes
       {
+        path: 'community',
+        element: <Navigate to="/community/city-outreach" replace />,
+      },
+      {
         path: 'community/city-outreach',
         Component: CityOutreach,
       },
@@ -211,6 +219,10 @@ export const router = createBrowserRouter([
         Component: Gallery,
       },
       // Give routes
+      {
+        path: 'give',
+        element: <Navigate to="/give/tithes-and-offering" replace />,
+      },
       {
         path: 'give/tithes-and-offering',
         Component: TithesAndOffering,
