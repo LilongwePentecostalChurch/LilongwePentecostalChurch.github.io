@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
-import { Clock, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Clock, MapPin, Facebook, Instagram, Youtube, CalendarPlus } from 'lucide-react';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 import { sanityClient } from '../../../lib/sanityClient';
 
@@ -42,6 +42,28 @@ function getMonth(dateStr: string) {
   try { return new Date(dateStr).toLocaleString('en-GB', { month: 'short' }).toUpperCase(); } catch { return ''; }
 }
 
+function toGcalDate(isoDate: string) {
+  // Format: YYYYMMDDTHHmmSS (local, no Z suffix so Google Calendar treats it as local time)
+  const d = new Date(isoDate);
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}00`;
+}
+
+function buildGoogleCalendarUrl(title: string, rawDate: string, location: string, description: string) {
+  const start = toGcalDate(rawDate);
+  // Default end = 2 hours after start
+  const endMs = new Date(rawDate).getTime() + 2 * 60 * 60 * 1000;
+  const end = toGcalDate(new Date(endMs).toISOString());
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: title,
+    dates: `${start}/${end}`,
+    location,
+    details: description,
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
 const fallbackFeatured = {
   title: "RECHARGE SERVICE",
   date: "29th April 2026",
@@ -49,6 +71,7 @@ const fallbackFeatured = {
   description: "A praise and worship experience where the goal is to recharge with praise and worship. Come expecting a fresh encounter with God through powerful Spirit-filled worship.",
   location: "Lilongwe Pentecostal Church M1 Road",
   registrationUrl: '',
+  rawDate: '',
 };
 
 const fallbackEvents = [
@@ -85,6 +108,7 @@ export function Upcoming() {
             description: blocksToText(featuredEvent.description as any[] ?? []),
             location: featuredEvent.location ?? 'LPC Main Sanctuary',
             registrationUrl: featuredEvent.registrationUrl ?? '',
+            rawDate: featuredEvent.date,
           });
           setEvents(data.map(e => ({
             title: e.title,
@@ -146,13 +170,22 @@ export function Upcoming() {
                   Register Now
                 </a>
               ) : (
-                <button className="px-8 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all">
-                  Register Now
-                </button>
+                <Link to="/connect/plan-your-visit"
+                  className="px-8 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all">
+                  Plan Your Visit
+                </Link>
               )}
-              <button className="px-8 py-3 bg-transparent border-2 border-white text-white font-['Montserrat'] font-bold rounded-full hover:bg-white hover:text-[#E8821A] transition-all">
-                Add to Calendar
-              </button>
+              {featured.rawDate && (
+                <a
+                  href={buildGoogleCalendarUrl(featured.title, featured.rawDate, featured.location, featured.description)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-8 py-3 bg-transparent border-2 border-white text-white font-['Montserrat'] font-bold rounded-full hover:bg-white hover:text-[#E8821A] transition-all"
+                >
+                  <CalendarPlus size={18} />
+                  Add to Calendar
+                </a>
+              )}
             </div>
             <div className="absolute bottom-8 right-8 w-20 h-20 rounded-full bg-[#E8821A] flex items-center justify-center">
               <span className="font-['TAN-BUSTER'] text-white text-xl">LPC</span>
@@ -200,9 +233,10 @@ export function Upcoming() {
                         Register Now
                       </a>
                     ) : (
-                      <button className="w-full px-6 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all">
-                        Register Now
-                      </button>
+                      <Link to="/connect/plan-your-visit"
+                        className="block w-full px-6 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold text-center rounded-full hover:bg-[#C94A1A] transition-all">
+                        Plan Your Visit
+                      </Link>
                     )}
                   </div>
                 </div>
