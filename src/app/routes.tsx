@@ -234,4 +234,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-], { basename: '/Design-LPC-Responsive-Website---new-and-better' });
+]);
