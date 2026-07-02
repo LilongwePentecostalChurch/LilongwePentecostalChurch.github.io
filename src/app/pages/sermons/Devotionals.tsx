@@ -157,7 +157,7 @@ export function Devotionals() {
               </p>
             </div>
 
-            <h2 className="font-['TAN-BUSTER'] text-white text-4xl md:text-5xl tracking-wide mb-4">
+            <h2 className="font-['TAN-BUSTER'] text-white text-2xl sm:text-4xl md:text-5xl tracking-wide mb-4 break-words">
               {todaysDevotional.title}
             </h2>
 
