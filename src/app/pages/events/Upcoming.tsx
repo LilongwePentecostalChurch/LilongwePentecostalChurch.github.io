@@ -204,7 +204,7 @@ export function Upcoming() {
               {events.map((event, index) => (
                 <div key={index} className="bg-[#150800]/60 backdrop-blur-sm border border-[#E8821A]/30 rounded-lg overflow-hidden hover:border-[#E8821A] transition-all group">
                   <div className="relative h-48 overflow-hidden">
-                    <ImageWithFallback src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <ImageWithFallback src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-br from-[#E8821A]/30 to-[#7A1A0A]/50" />
                     <div className="absolute top-4 left-4 bg-[#1A0500]/90 backdrop-blur-sm border border-[#E8821A]/50 rounded-lg p-3 text-center">
                       <p className="font-['TAN-BUSTER'] text-[#E8821A] text-2xl leading-none">{event.day}</p>

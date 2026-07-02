@@ -25,7 +25,7 @@ const fallbackImages: GalleryImage[] = [
 
 const ALL_MONTHS = ['ALL', 'JANUARY 2026', 'FEBRUARY 2026', 'MARCH 2026', 'APRIL 2026', 'MAY 2026', 'JUNE 2026'];
 
-function ImageWithFallback({ src, alt, className }: { src?: string; alt?: string; className?: string }) {
+function ImageWithFallback({ src, alt, className, loading }: { src?: string; alt?: string; className?: string; loading?: 'lazy' | 'eager' }) {
   if (!src) {
     return (
       <div className={`bg-[#2A0A00] flex flex-col items-center justify-center gap-2 ${className ?? ''}`}>
@@ -36,7 +36,7 @@ function ImageWithFallback({ src, alt, className }: { src?: string; alt?: string
       </div>
     );
   }
-  return <img src={src} alt={alt ?? ''} className={className} />;
+  return <img src={src} alt={alt ?? ''} className={className} loading={loading} />;
 }
 
 export function Gallery() {
@@ -184,6 +184,7 @@ export function Gallery() {
                     src={image.url}
                     alt={image.caption}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
                     <Eye className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={32} />
