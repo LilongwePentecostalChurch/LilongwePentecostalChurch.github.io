@@ -308,6 +308,7 @@ export function Layout() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Follow us on ${social.label}`}
                       className="w-10 h-10 rounded-full bg-[#E8821A] flex items-center justify-center text-white"
                     >
                       <SocialIcon platform={social.platform} size={18} />
@@ -442,6 +443,7 @@ export function Layout() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Follow us on ${social.label}`}
                 className="w-8 h-8 rounded-full bg-[#E8821A] flex items-center justify-center text-white hover:bg-[#C94A1A] transition-colors"
               >
                 <SocialIcon platform={social.platform} size={14} />

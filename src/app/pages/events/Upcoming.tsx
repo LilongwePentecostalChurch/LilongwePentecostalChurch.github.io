@@ -249,13 +249,13 @@ export function Upcoming() {
               <h3 className="font-['TAN-BUSTER'] text-white text-3xl tracking-wide mb-4">MORE EVENTS COMING SOON</h3>
               <p className="font-['Montserrat'] text-white/80 text-lg mb-6">Check back regularly or follow us on social media to stay updated.</p>
               <div className="flex gap-4 justify-center">
-                <a href="https://youtube.com/@lilongwepentecostalchurch-l1u" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-[#E8821A]/10 flex items-center justify-center hover:bg-[#E8821A] transition-all group">
+                <a href="https://youtube.com/@lilongwepentecostalchurch-l1u" target="_blank" rel="noopener noreferrer" aria-label="Follow us on YouTube" className="w-12 h-12 rounded-lg bg-[#E8821A]/10 flex items-center justify-center hover:bg-[#E8821A] transition-all group">
                   <Youtube className="text-[#E8821A] group-hover:text-white" size={20} />
                 </a>
-                <a href="https://web.facebook.com/lilongwepentecostalchurch" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-[#E8821A]/10 flex items-center justify-center hover:bg-[#E8821A] transition-all group">
+                <a href="https://web.facebook.com/lilongwepentecostalchurch" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="w-12 h-12 rounded-lg bg-[#E8821A]/10 flex items-center justify-center hover:bg-[#E8821A] transition-all group">
                   <Facebook className="text-[#E8821A] group-hover:text-white" size={20} />
                 </a>
-                <a href="https://instagram.com/lpc" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg bg-[#E8821A]/10 flex items-center justify-center hover:bg-[#E8821A] transition-all group">
+                <a href="https://instagram.com/lpc" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-12 h-12 rounded-lg bg-[#E8821A]/10 flex items-center justify-center hover:bg-[#E8821A] transition-all group">
                   <Instagram className="text-[#E8821A] group-hover:text-white" size={20} />
                 </a>
               </div>
