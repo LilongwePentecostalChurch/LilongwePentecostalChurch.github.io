@@ -94,12 +94,18 @@ export function MinistryTemplate({ ministry, allMinistries }: MinistryTemplatePr
                 {ministry.tagline}
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="px-8 py-3 bg-[#E8821A] text-white rounded-full font-['Montserrat'] font-bold hover:bg-[#C94A1A] transition-colors">
+                <Link
+                  to="/connect/plan-your-visit"
+                  className="px-8 py-3 bg-[#E8821A] text-white rounded-full font-['Montserrat'] font-bold hover:bg-[#C94A1A] transition-colors"
+                >
                   Join This Ministry
-                </button>
-                <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-full font-['Montserrat'] font-bold hover:bg-white hover:text-[#1A0500] transition-colors">
+                </Link>
+                <Link
+                  to="/connect/counselling-prayer"
+                  className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-full font-['Montserrat'] font-bold hover:bg-white hover:text-[#1A0500] transition-colors"
+                >
                   Contact Leader
-                </button>
+                </Link>
               </div>
             </div>
             <LPCLogo size={48} />

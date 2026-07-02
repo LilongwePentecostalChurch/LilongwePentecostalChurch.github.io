@@ -81,8 +81,7 @@ export function Annual() {
                   </div>
                   <div className="p-6">
                     <h3 className="font-['TAN-BUSTER'] text-white text-xl tracking-wide mb-3">{event.title}</h3>
-                    <p className="font-['Montserrat'] text-white/80 text-sm leading-relaxed mb-6">{event.description}</p>
-                    <button className="w-full px-6 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all">Learn More</button>
+                    <p className="font-['Montserrat'] text-white/80 text-sm leading-relaxed">{event.description}</p>
                   </div>
                 </div>
               ))}
