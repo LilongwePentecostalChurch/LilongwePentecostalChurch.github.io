@@ -115,7 +115,7 @@ export function Devotionals() {
           <p className="font-['Signature'] text-[#E8821A] text-2xl italic mb-4">
             Daily fuel for your faith
           </p>
-          <h1 className="font-['TAN-BUSTER'] text-white text-5xl md:text-6xl tracking-wide mb-6">
+          <h1 className="font-['TAN-BUSTER'] text-white text-3xl sm:text-5xl md:text-6xl tracking-wide mb-6">
             DEVOTIONALS
           </h1>
         </div>

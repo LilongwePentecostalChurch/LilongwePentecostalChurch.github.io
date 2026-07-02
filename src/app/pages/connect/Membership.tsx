@@ -69,7 +69,7 @@ export function Membership() {
             <span className="text-white">Membership Class</span>
           </div>
           <p className="font-['Signature'] text-[#E8821A] text-3xl italic mb-4">This is your home</p>
-          <h1 className="font-['TAN-BUSTER'] text-white text-5xl md:text-7xl tracking-wide mb-6">
+          <h1 className="font-['TAN-BUSTER'] text-white text-3xl sm:text-5xl md:text-7xl tracking-wide mb-6">
             MEMBERSHIP CLASS
           </h1>
           <p className="font-['Montserrat'] text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
