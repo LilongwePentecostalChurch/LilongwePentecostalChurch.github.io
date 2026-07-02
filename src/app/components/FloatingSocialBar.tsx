@@ -19,6 +19,7 @@ export function FloatingSocialBar() {
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Follow us on ${social.label}`}
           className="relative w-12 h-12 flex items-center justify-center text-white hover:bg-[#E8821A] transition-all duration-300 hover:-translate-x-1 group"
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
