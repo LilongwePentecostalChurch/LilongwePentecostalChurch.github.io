@@ -89,7 +89,7 @@ export function CounsellingPrayer() {
           <p className="font-['Signature'] text-[#E8821A] text-2xl italic mb-4">
             We believe God hears and answers prayer
           </p>
-          <h1 className="font-['TAN-BUSTER'] text-white text-5xl md:text-6xl tracking-wide mb-6">
+          <h1 className="font-['TAN-BUSTER'] text-white text-3xl sm:text-5xl md:text-6xl tracking-wide mb-6">
             COUNSELLING AND PRAYER
           </h1>
         </div>
@@ -238,7 +238,7 @@ export function CounsellingPrayer() {
             <p className="font-['Signature'] text-[#E8821A] text-xl italic mb-3">
               We are here for you
             </p>
-            <h2 className="font-['TAN-BUSTER'] text-white text-4xl tracking-wide mb-6">
+            <h2 className="font-['TAN-BUSTER'] text-white text-3xl md:text-4xl tracking-wide mb-6">
               PASTORAL COUNSELLING
             </h2>
             <p className="font-['Montserrat'] text-white/80 max-w-3xl mx-auto leading-relaxed">
