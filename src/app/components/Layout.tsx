@@ -95,6 +95,45 @@ export function Layout() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  useEffect(() => {
+    const PAGE_TITLES: Record<string, string> = {
+      '/': 'Lilongwe Pentecostal Church',
+      '/about': 'About LPC',
+      '/about/our-story': 'Our Story',
+      '/about/lead-pastor': 'Our Lead Pastor',
+      '/about/leadership-team': 'Leadership Team',
+      '/about/what-we-believe': 'What We Believe',
+      '/about/lpc-at-a-glance': 'LPC At A Glance',
+      '/about/staff': 'Staff',
+      '/sermons': 'Sermons',
+      '/sermons/bible-study-notes': 'Bible Study Notes',
+      '/sermons/devotionals': 'Devotionals',
+      '/ministries': 'Ministries',
+      '/events': 'Events',
+      '/events/upcoming': 'Upcoming Events',
+      '/events/annual': 'Annual Events',
+      '/events/past': 'Past Events',
+      '/connect/plan-your-visit': 'Plan Your Visit',
+      '/connect/care-groups': 'Care Groups',
+      '/connect/counselling-prayer': 'Counselling & Prayer',
+      '/connect/volunteer': 'Volunteer',
+      '/connect/membership': 'Membership Class',
+      '/community/city-outreach': 'City Outreach',
+      '/community/care-and-welfare': 'Care & Welfare',
+      '/gallery': 'Gallery',
+      '/give/tithes-and-offering': 'Tithes & Offering',
+      '/give/testimony-of-giving': 'Testimony of Giving',
+      '/leadership': 'Leadership',
+      '/leadership/lead-pastor': 'Our Lead Pastor',
+      '/leadership/pastoral-team': 'Pastoral Team',
+    };
+    const SITE = 'Lilongwe Pentecostal Church';
+    const pageTitle = PAGE_TITLES[location.pathname];
+    document.title = pageTitle && pageTitle !== SITE
+      ? `${pageTitle} | ${SITE}`
+      : SITE;
+  }, [location.pathname]);
+
   // Click outside to close
   useEffect(() => {
     if (!activeDropdown) return;
