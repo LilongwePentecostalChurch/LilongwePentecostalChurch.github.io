@@ -66,7 +66,7 @@ export function ParentResources() {
             <span className="text-white">Parent Resources</span>
           </div>
           <p className="font-['Signature'] text-[#E8821A] text-2xl italic mb-4">Equipping the family at home</p>
-          <h1 className="font-['TAN-BUSTER'] text-white text-5xl md:text-6xl tracking-wide mb-6">PARENT RESOURCES</h1>
+          <h1 className="font-['TAN-BUSTER'] text-white text-3xl sm:text-5xl md:text-6xl tracking-wide mb-6">PARENT RESOURCES</h1>
         </div>
       </section>
 
