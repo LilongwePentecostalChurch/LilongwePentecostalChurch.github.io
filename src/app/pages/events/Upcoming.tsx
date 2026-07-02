@@ -154,7 +154,7 @@ export function Upcoming() {
             <div className="inline-block px-4 py-2 bg-[#E8821A] rounded-full mb-6">
               <p className="font-['Montserrat'] font-bold text-white text-sm">FEATURED EVENT</p>
             </div>
-            <h2 className="font-['TAN-BUSTER'] text-white text-5xl tracking-wide mb-4">{featured.title}</h2>
+            <h2 className="font-['TAN-BUSTER'] text-white text-3xl sm:text-5xl tracking-wide mb-4 break-words">{featured.title}</h2>
             <p className="font-['Signature'] text-[#E8821A] text-2xl italic mb-6">{featured.date} · {featured.time}</p>
             <p className="font-['Montserrat'] text-white/90 text-lg leading-relaxed max-w-3xl mb-8">{featured.description}</p>
             {featured.location && (
