@@ -2,11 +2,11 @@ import { Breadcrumb } from './Breadcrumb';
 
 interface PlaceholderPageProps {
   title: string;
-  description: string;
-  breadcrumbs: { label: string; path?: string }[];
+  description?: string;
+  breadcrumbs?: { label: string; path?: string }[];
 }
 
-export function PlaceholderPage({ title, description, breadcrumbs }: PlaceholderPageProps) {
+export function PlaceholderPage({ title, description = '', breadcrumbs = [] }: PlaceholderPageProps) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
