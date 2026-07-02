@@ -137,7 +137,7 @@ export function Events() {
 
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <p className="font-['Signature'] text-3xl text-[#E8821A] mb-4">What's Happening</p>
-          <h1 className="font-['TAN-BUSTER'] text-5xl sm:text-6xl md:text-7xl text-white mb-6 tracking-wider">
+          <h1 className="font-['TAN-BUSTER'] text-2xl sm:text-5xl md:text-7xl text-white mb-6 tracking-wider">
             EVENTS & ANNOUNCEMENTS
           </h1>
           <p className="font-['Montserrat'] text-lg text-white/90 max-w-2xl mx-auto">
@@ -151,7 +151,7 @@ export function Events() {
         <div className="absolute inset-0 bg-gradient-radial from-[#7A1A0A]/60 to-[#1A0500]"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          <h2 className="font-['TAN-BUSTER'] text-4xl sm:text-5xl text-white mb-12 tracking-wider border-l-4 border-[#E8821A] pl-6">
+          <h2 className="font-['TAN-BUSTER'] text-2xl sm:text-4xl md:text-5xl text-white mb-12 tracking-wider border-l-4 border-[#E8821A] pl-6">
             LATEST ANNOUNCEMENTS
           </h2>
 
