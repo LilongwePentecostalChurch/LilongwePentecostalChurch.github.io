@@ -96,7 +96,8 @@ export function CounsellingPrayer() {
       </section>
 
       {/* Section 1 - Prayer Request */}
-      <section 
+      <section
+        id="request"
         className="relative py-20 px-6 overflow-hidden"
         style={{
           backgroundImage: `
@@ -268,9 +269,12 @@ export function CounsellingPrayer() {
           </div>
 
           <div className="text-center">
-            <button className="px-8 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all">
+            <a
+              href="#request"
+              className="inline-block px-8 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all"
+            >
               Book a Counselling Session
-            </button>
+            </a>
           </div>
         </div>
       </section>

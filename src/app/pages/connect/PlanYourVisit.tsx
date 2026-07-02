@@ -254,9 +254,12 @@ export function PlanYourVisit() {
           </div>
 
           <div className="text-center">
-            <button className="px-8 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all">
+            <Link
+              to="/connect/membership"
+              className="inline-block px-8 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all"
+            >
               Register for Membership Class
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -305,9 +308,12 @@ export function PlanYourVisit() {
             <p className="font-['Montserrat'] text-white text-lg mb-6">
               Join one of our volunteer teams and use your gifts to serve the LPC family.
             </p>
-            <button className="px-8 py-3 bg-white text-[#E8821A] font-['Montserrat'] font-bold rounded-full hover:bg-white/90 transition-all">
+            <Link
+              to="/connect/volunteer"
+              className="inline-block px-8 py-3 bg-white text-[#E8821A] font-['Montserrat'] font-bold rounded-full hover:bg-white/90 transition-all"
+            >
               Fill In Volunteer Form
-            </button>
+            </Link>
           </div>
         </div>
       </section>
