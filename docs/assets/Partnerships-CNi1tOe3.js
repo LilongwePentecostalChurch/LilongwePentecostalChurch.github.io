@@ -1,0 +1,1 @@
+import{j as r,o as t}from"./index-C-DnAtGM.js";function i(){return r.jsx(t,{title:"Partnerships",description:"Building relationships for Kingdom impact",breadcrumbs:[{label:"Home",path:"/"},{label:"Community",path:"/community"},{label:"Partnerships"}]})}export{i as Partnerships};
