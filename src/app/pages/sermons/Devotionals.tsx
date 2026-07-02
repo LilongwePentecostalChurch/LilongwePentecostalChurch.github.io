@@ -1,12 +1,16 @@
 import { Link } from 'react-router';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 import { useState } from 'react';
+import { sendFormEmail } from '../../../lib/emailService';
 
 export function Devotionals() {
   const [subscribeData, setSubscribeData] = useState({
     name: '',
     contact: ''
   });
+  const [subscribeSending, setSubscribeSending] = useState(false);
+  const [subscribeSubmitted, setSubscribeSubmitted] = useState(false);
+  const [subscribeError, setSubscribeError] = useState('');
 
   const todaysDevotional = {
     title: "BE STRONG IN THE LORD",
@@ -60,9 +64,22 @@ export function Devotionals() {
     }
   ];
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Subscribe:', subscribeData);
+    setSubscribeSending(true);
+    setSubscribeError('');
+    try {
+      await sendFormEmail({
+        form_type: 'Devotional Subscription',
+        from_name: subscribeData.name,
+        details:   `Contact (email or WhatsApp): ${subscribeData.contact}`,
+      });
+      setSubscribeSubmitted(true);
+    } catch {
+      setSubscribeError('Something went wrong. Please try again.');
+    } finally {
+      setSubscribeSending(false);
+    }
   };
 
   return (
@@ -237,32 +254,45 @@ export function Devotionals() {
               Subscribe to receive our daily devotional straight to your WhatsApp or email.
             </p>
 
-            <form onSubmit={handleSubscribe} className="max-w-2xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-4 mb-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={subscribeData.name}
-                  onChange={(e) => setSubscribeData({ ...subscribeData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-[#1A0500]/60 border border-[#E8821A]/30 rounded-lg text-white font-['Montserrat'] placeholder:text-white/50 focus:outline-none focus:border-[#E8821A] transition-colors"
-                  required
-                />
-                <input
-                  type="text"
-                  placeholder="Email or WhatsApp Number"
-                  value={subscribeData.contact}
-                  onChange={(e) => setSubscribeData({ ...subscribeData, contact: e.target.value })}
-                  className="w-full px-4 py-3 bg-[#1A0500]/60 border border-[#E8821A]/30 rounded-lg text-white font-['Montserrat'] placeholder:text-white/50 focus:outline-none focus:border-[#E8821A] transition-colors"
-                  required
-                />
+            {subscribeSubmitted ? (
+              <div className="max-w-2xl mx-auto py-4">
+                <p className="font-['TAN-BUSTER'] text-[#E8821A] text-2xl tracking-wide mb-2">YOU'RE SUBSCRIBED!</p>
+                <p className="font-['Montserrat'] text-white/80">
+                  Thank you, <span className="text-white font-bold">{subscribeData.name}</span>! You'll start receiving our daily devotionals soon.
+                </p>
               </div>
-              <button
-                type="submit"
-                className="w-full md:w-auto px-8 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all"
-              >
-                Subscribe Now
-              </button>
-            </form>
+            ) : (
+              <form onSubmit={handleSubscribe} className="max-w-2xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    value={subscribeData.name}
+                    onChange={(e) => setSubscribeData({ ...subscribeData, name: e.target.value })}
+                    className="w-full px-4 py-3 bg-[#1A0500]/60 border border-[#E8821A]/30 rounded-lg text-white font-['Montserrat'] placeholder:text-white/50 focus:outline-none focus:border-[#E8821A] transition-colors"
+                    required
+                  />
+                  <input
+                    type="text"
+                    placeholder="Email or WhatsApp Number"
+                    value={subscribeData.contact}
+                    onChange={(e) => setSubscribeData({ ...subscribeData, contact: e.target.value })}
+                    className="w-full px-4 py-3 bg-[#1A0500]/60 border border-[#E8821A]/30 rounded-lg text-white font-['Montserrat'] placeholder:text-white/50 focus:outline-none focus:border-[#E8821A] transition-colors"
+                    required
+                  />
+                </div>
+                {subscribeError && (
+                  <p className="font-['Montserrat'] text-red-400 text-sm mb-4">{subscribeError}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={subscribeSending}
+                  className="w-full md:w-auto px-8 py-3 bg-[#E8821A] text-white font-['Montserrat'] font-bold rounded-full hover:bg-[#C94A1A] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {subscribeSending ? 'Subscribing…' : 'Subscribe Now'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>
