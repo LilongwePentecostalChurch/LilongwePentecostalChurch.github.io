@@ -1,0 +1,1 @@
+import{j as e,o as r}from"./index-CtW4gliv.js";function i(){return e.jsx(r,{title:"Children's Events",description:"Special activities for our young ones",breadcrumbs:[{label:"Home",path:"/"},{label:"Children",path:"/children"},{label:"Children's Events"}]})}export{i as ChildrensEvents};

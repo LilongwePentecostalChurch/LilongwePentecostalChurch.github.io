@@ -68,7 +68,7 @@ export function Home() {
           </div>
 
           {/* Social Follow Buttons */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-44 sm:mb-28 lg:mb-16 max-w-4xl mx-auto">
             <a
               href="https://www.tiktok.com/@llpentecostalchurch?is_from_webapp=1&sender_device=pc"
               target="_blank"

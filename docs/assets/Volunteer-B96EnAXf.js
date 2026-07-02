@@ -1,1 +1,0 @@
-import{j as e,o as t}from"./index-C-DnAtGM.js";function r(){return e.jsx(t,{title:"Volunteer",description:"Use your gifts to serve others",breadcrumbs:[{label:"Home",path:"/"},{label:"Connect",path:"/connect"},{label:"Volunteer"}]})}export{r as Volunteer};
