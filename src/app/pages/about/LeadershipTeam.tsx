@@ -138,6 +138,7 @@ export function LeadershipTeam() {
                     src={pastor.photo ? urlFor(pastor.photo).width(400).url() : PLACEHOLDER_IMG}
                     alt={pastor.name}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A0500] via-[#1A0500]/60 to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
                   <div className="absolute top-4 right-4 w-12 h-12 bg-[#E8821A] rounded-full flex items-center justify-center shadow-lg">
@@ -170,7 +171,7 @@ export function LeadershipTeam() {
               <div key={index} className="text-center group">
                 <div className="relative w-24 h-24 mx-auto mb-3">
                   <div className="w-full h-full rounded-full border-4 border-[#E8821A] overflow-hidden group-hover:shadow-[0_0_20px_rgba(232,130,26,0.6)] transition-all">
-                    <ImageWithFallback src={elder.image} alt={elder.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    <ImageWithFallback src={elder.image} alt={elder.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform" loading="lazy" />
                   </div>
                 </div>
                 <p className="font-['Montserrat'] font-bold text-white text-sm mb-1">{elder.name}</p>
@@ -195,7 +196,7 @@ export function LeadershipTeam() {
               <div key={index} className="text-center group">
                 <div className="relative w-24 h-24 mx-auto mb-3">
                   <div className="w-full h-full rounded-full border-4 border-[#E8821A] overflow-hidden group-hover:shadow-[0_0_20px_rgba(232,130,26,0.6)] transition-all">
-                    <ImageWithFallback src={deacon.image} alt={deacon.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    <ImageWithFallback src={deacon.image} alt={deacon.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform" loading="lazy" />
                   </div>
                 </div>
                 <p className="font-['Montserrat'] font-bold text-white text-sm mb-1">{deacon.name}</p>
@@ -221,7 +222,7 @@ export function LeadershipTeam() {
               return (
                 <Link key={index} to={ministry.link} className="group relative bg-[#1A0500]/80 backdrop-blur-sm rounded-lg overflow-hidden border-2 border-[#E8821A]/30 hover:border-[#E8821A] hover:shadow-[0_0_30px_rgba(232,130,26,0.4)] transition-all duration-300 cursor-pointer">
                   <div className="aspect-square relative overflow-hidden">
-                    <ImageWithFallback src={ministry.image} alt={ministry.ministry} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                    <ImageWithFallback src={ministry.image} alt={ministry.ministry} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1A0500] via-[#1A0500]/60 to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
                     <div className="absolute top-4 right-4 w-12 h-12 bg-[#E8821A] rounded-full flex items-center justify-center shadow-lg">
                       <IconComponent className="text-white" size={24} />
