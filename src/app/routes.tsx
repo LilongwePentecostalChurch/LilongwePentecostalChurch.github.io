@@ -1,4 +1,5 @@
 import { createBrowserRouter, Navigate } from 'react-router';
+import { NotFound } from './pages/NotFound';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
@@ -243,6 +244,11 @@ export const router = createBrowserRouter([
       {
         path: 'leadership/pastoral-team',
         Component: PastoralTeam,
+      },
+      // Catch-all 404
+      {
+        path: '*',
+        Component: NotFound,
       },
     ],
   },
