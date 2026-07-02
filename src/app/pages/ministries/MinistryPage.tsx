@@ -4,12 +4,15 @@ import { Book } from 'lucide-react';
 import { MinistryTemplate } from './MinistryTemplate';
 import { ministriesData } from '../../data/ministriesData';
 import { sanityClient, urlFor } from '../../../lib/sanityClient';
+import { usePageTitle } from '../../../lib/usePageTitle';
 
 export function MinistryPage() {
   const { ministryId } = useParams<{ ministryId: string }>();
   const [ministry, setMinistry] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+
+  usePageTitle(ministry?.name);
 
   useEffect(() => {
     if (!ministryId) return;
