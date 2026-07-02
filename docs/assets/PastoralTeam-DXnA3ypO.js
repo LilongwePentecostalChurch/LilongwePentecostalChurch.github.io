@@ -1,0 +1,1 @@
+import{j as e,o as a}from"./index-BTPUN_M7.js";function t(){return e.jsx(a,{title:"Pastoral Team",description:"Serving together in ministry",breadcrumbs:[{label:"Home",path:"/"},{label:"Leadership",path:"/leadership"},{label:"Pastoral Team"}]})}export{t as PastoralTeam};

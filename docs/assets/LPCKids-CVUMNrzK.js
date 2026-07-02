@@ -1,1 +1,0 @@
-import{j as e,o as r}from"./index-CtW4gliv.js";function i(){return e.jsx(r,{title:"LPC Kids",description:"A safe and fun place for children to grow in faith",breadcrumbs:[{label:"Home",path:"/"},{label:"Children",path:"/children"},{label:"LPC Kids"}]})}export{i as LPCKids};
