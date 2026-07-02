@@ -65,6 +65,8 @@ const mobileSubLinks: Record<string, { name: string; path: string }[]> = {
     { name: 'Plan Your Visit', path: '/connect/plan-your-visit' },
     { name: 'Care Groups', path: '/connect/care-groups' },
     { name: 'Counselling & Prayer', path: '/connect/counselling-prayer' },
+    { name: 'Membership Class', path: '/connect/membership' },
+    { name: 'Volunteer', path: '/connect/volunteer' },
   ],
   community: [
     { name: 'City Outreach', path: '/community/city-outreach' },

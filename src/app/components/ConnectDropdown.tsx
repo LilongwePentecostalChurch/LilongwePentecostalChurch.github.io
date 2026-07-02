@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { DoorOpen, Home, Heart } from 'lucide-react';
+import { DoorOpen, Home, Heart, ClipboardList } from 'lucide-react';
 
 interface MenuItem {
   icon: React.ElementType;
@@ -26,6 +26,12 @@ const menuItems: MenuItem[] = [
     title: 'Counselling and Prayer',
     description: 'Pastoral counselling, prayer requests and spiritual support',
     path: '/connect/counselling-prayer',
+  },
+  {
+    icon: ClipboardList,
+    title: 'Membership Class',
+    description: 'Take the next step and become an official member of Lilongwe Pentecostal Church',
+    path: '/connect/membership',
   },
 ];
 
@@ -82,7 +88,6 @@ export function ConnectDropdown({ isOpen, onClose }: ConnectDropdownProps) {
               </Link>
             );
           })}
-          <div className="p-4 rounded-lg opacity-0 pointer-events-none"></div>
         </div>
       </div>
     </div>
