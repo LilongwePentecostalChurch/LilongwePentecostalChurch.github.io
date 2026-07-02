@@ -31,8 +31,54 @@ const navLinks = [
   { name: 'Give', path: '#', hasDropdown: true, dropdown: 'give' },
 ];
 
+const mobileSubLinks: Record<string, { name: string; path: string }[]> = {
+  about: [
+    { name: 'About LPC', path: '/about' },
+    { name: 'Our Story', path: '/about/our-story' },
+    { name: 'Our Lead Pastor', path: '/about/lead-pastor' },
+    { name: 'Leadership Team', path: '/about/leadership-team' },
+    { name: 'What We Believe', path: '/about/what-we-believe' },
+    { name: 'LPC At A Glance', path: '/about/lpc-at-a-glance' },
+    { name: 'Staff', path: '/about/staff' },
+  ],
+  sermons: [
+    { name: 'Sermons', path: '/sermons' },
+    { name: 'Bible Study Notes', path: '/sermons/bible-study-notes' },
+    { name: 'Devotionals', path: '/sermons/devotionals' },
+  ],
+  ministries: [
+    { name: 'All Ministries', path: '/ministries' },
+    { name: "Sunday School", path: '/ministries/sunday-school' },
+    { name: "Women's Ministry", path: '/ministries/womens-ministry' },
+    { name: 'Youth Ministry', path: '/ministries/youth-ministry' },
+    { name: "Men's Ministry", path: '/ministries/mens-ministry' },
+    { name: 'Couples Ministry', path: '/ministries/couples-ministry' },
+    { name: 'Evangelism', path: '/ministries/evangelism' },
+    { name: 'Intercessors', path: '/ministries/intercessors' },
+  ],
+  events: [
+    { name: 'Upcoming Events', path: '/events/upcoming' },
+    { name: 'Annual Events', path: '/events/annual' },
+    { name: 'Past Events', path: '/events/past' },
+  ],
+  connect: [
+    { name: 'Plan Your Visit', path: '/connect/plan-your-visit' },
+    { name: 'Care Groups', path: '/connect/care-groups' },
+    { name: 'Counselling & Prayer', path: '/connect/counselling-prayer' },
+  ],
+  community: [
+    { name: 'City Outreach', path: '/community/city-outreach' },
+    { name: 'Care and Welfare', path: '/community/care-and-welfare' },
+  ],
+  give: [
+    { name: 'Tithes & Offering', path: '/give/tithes-and-offering' },
+    { name: 'Testimony of Giving', path: '/give/testimony-of-giving' },
+  ],
+};
+
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const navContainerRef = useRef<HTMLDivElement>(null);
@@ -158,7 +204,7 @@ export function Layout() {
               </div>
 
               <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                onClick={() => { setMobileMenuOpen(!mobileMenuOpen); setMobileExpanded(null); }}
                 className="md:hidden text-[#E8821A]"
               >
                 {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -168,17 +214,54 @@ export function Layout() {
 
           {mobileMenuOpen && (
             <div className="md:hidden bg-[#1A0500] border-t border-[#E8821A]">
-              <div className="px-4 py-6 space-y-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.path}
-                    className="block text-[#E8821A] hover:text-white transition-colors font-medium py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+              <div className="px-4 py-6 space-y-1">
+                {navLinks.map((link) => {
+                  if (!link.hasDropdown) {
+                    return (
+                      <Link
+                        key={link.name}
+                        to={link.path}
+                        className="block text-[#E8821A] hover:text-white transition-colors font-medium py-3 border-b border-white/10"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </Link>
+                    );
+                  }
+                  const isExpanded = mobileExpanded === link.dropdown;
+                  const subLinks = mobileSubLinks[link.dropdown!] ?? [];
+                  return (
+                    <div key={link.name}>
+                      <button
+                        className="w-full flex items-center justify-between text-[#E8821A] hover:text-white transition-colors font-medium py-3 border-b border-white/10"
+                        onClick={() => setMobileExpanded(isExpanded ? null : link.dropdown!)}
+                      >
+                        <span>{link.name}</span>
+                        <ChevronDown
+                          size={16}
+                          className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                        />
+                      </button>
+                      {isExpanded && (
+                        <div className="pl-4 pb-2 space-y-1">
+                          {subLinks.map((sub) => (
+                            <Link
+                              key={sub.path}
+                              to={sub.path}
+                              className="block text-white/70 hover:text-[#E8821A] transition-colors text-sm py-2"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setMobileExpanded(null);
+                              }}
+                            >
+                              {sub.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
                 <div className="flex gap-3 pt-4">
                   {socialLinks.map((social) => (
                     <a
