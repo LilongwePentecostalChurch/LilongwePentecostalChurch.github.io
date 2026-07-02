@@ -146,9 +146,12 @@ export function CityOutreach() {
             <p className="font-['Montserrat'] text-white text-lg mb-6">
               Join our outreach team and be part of taking the Gospel to every corner of the city.
             </p>
-            <button className="px-8 py-3 bg-white text-[#E8821A] font-['Montserrat'] font-bold rounded-full hover:bg-white/90 transition-all">
+            <Link
+              to="/connect/volunteer"
+              className="inline-block px-8 py-3 bg-white text-[#E8821A] font-['Montserrat'] font-bold rounded-full hover:bg-white/90 transition-all"
+            >
               Join the Outreach Team
-            </button>
+            </Link>
           </div>
         </div>
       </section>
