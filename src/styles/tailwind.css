@@ -8,4 +8,11 @@
   .bg-gradient-radial {
     background-image: radial-gradient(circle, var(--tw-gradient-stops));
   }
+
+  /* TAN-BUSTER display font: add line-height and word-spacing globally.
+     This rule comes after Tailwind's generated utilities, so it wins on equal specificity. */
+  [class*="TAN-BUSTER"] {
+    line-height: 1.2;
+    word-spacing: 0.1em;
+  }
 }
