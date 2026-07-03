@@ -353,30 +353,6 @@ export function Layout() {
       </main>
 
       <footer className="bg-[#100300] py-16 px-4 relative border-t-2 border-[#E8821A]">
-        <div className="max-w-7xl mx-auto mb-12">
-          <div className="bg-[#1A0500]/80 border border-[#E8821A] rounded-lg py-8 px-6">
-            <p className="font-['Montserrat'] text-white text-center mb-6">
-              Connect with us on all platforms:
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.platform}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-6 py-3 bg-[#E8821A] text-white rounded-full font-['Montserrat'] font-bold hover:bg-[#C94A1A] transition-colors"
-                >
-                  <SocialIcon platform={social.platform} size={20} />
-                  {social.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full h-px bg-[#E8821A] mb-12 max-w-7xl mx-auto"></div>
-
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 mb-12">
           <div>
             <LPCLogo size={120} />
@@ -428,6 +404,30 @@ export function Layout() {
                 <Mail className="text-[#E8821A]" size={18} />
                 <p className="font-['Montserrat'] text-white/80 text-sm">info@lpc.org.mw</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full h-px bg-[#E8821A] mb-12 max-w-7xl mx-auto"></div>
+
+        <div className="max-w-7xl mx-auto mb-12">
+          <div className="bg-[#1A0500]/80 border border-[#E8821A] rounded-lg py-8 px-6">
+            <p className="font-['Montserrat'] text-white text-center mb-6">
+              Connect with us on all platforms:
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.platform}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-6 py-3 bg-[#E8821A] text-white rounded-full font-['Montserrat'] font-bold hover:bg-[#C94A1A] transition-colors"
+                >
+                  <SocialIcon platform={social.platform} size={20} />
+                  {social.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>
