@@ -1,0 +1,1 @@
+import{j as e,o as t}from"./index-MX521Eau.js";function s(){return e.jsx(t,{title:"Testimonies",description:"Stories of God's faithfulness",breadcrumbs:[{label:"Home",path:"/"},{label:"Community",path:"/community"},{label:"Testimonies"}]})}export{s as Testimonies};

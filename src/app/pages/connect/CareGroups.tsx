@@ -65,7 +65,7 @@ export function CareGroups() {
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1080&h=720&fit=crop"
+            src="/images/care-groups-hero.jpg"
             alt="Care Groups"
             className="w-full h-full object-cover"
           />
@@ -115,7 +115,7 @@ export function CareGroups() {
             {/* Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(232,130,26,0.15)]">
               <img
-                src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=800&h=600&fit=crop"
+                src="/images/care-groups-hero.jpg"
                 alt="Care Group meeting"
                 className="w-full h-[450px] object-cover"
               />

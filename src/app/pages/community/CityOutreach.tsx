@@ -30,7 +30,7 @@ export function CityOutreach() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1759709042164-0dd78a39028b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1cmJhbiUyMGNpdHklMjBvdXRyZWFjaCUyMG1pc3Npb24lMjBjb21tdW5pdHl8ZW58MXx8fHwxNzc1MTI2Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            src="/images/city-outreach-hero.jpg"
             alt="City Outreach"
             className="w-full h-full object-cover"
           />
@@ -84,7 +84,7 @@ export function CityOutreach() {
             {/* Right - Image */}
             <div className="relative rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&h=600&fit=crop"
+                src="/images/city-outreach-hero.jpg"
                 alt="City Outreach"
                 className="w-full h-[400px] object-cover"
               />

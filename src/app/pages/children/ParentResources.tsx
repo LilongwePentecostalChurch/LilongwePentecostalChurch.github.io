@@ -51,7 +51,7 @@ export function ParentResources() {
       <section className="relative py-24 px-6 overflow-hidden">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            src="/images/parent-resources-hero.jpg"
             alt="Parent Resources"
             className="w-full h-full object-cover"
           />

@@ -66,7 +66,7 @@ export function OurStory() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1762303928693-db677877afeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            src="/images/our-story-hero.jpg"
             alt="Our Story"
             className="w-full h-full object-cover"
           />
@@ -133,7 +133,7 @@ export function OurStory() {
             <div className="relative">
               <div className="relative rounded-lg overflow-hidden">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&h=600&fit=crop"
+                  src="/images/our-story-hero.jpg"
                   alt="LPC Congregation"
                   className="w-full h-[400px] object-cover"
                 />
@@ -241,7 +241,7 @@ export function OurStory() {
 
             <div className="relative rounded-lg overflow-hidden">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=500&fit=crop"
+                src="/images/our-story-hero.jpg"
                 alt="LPC Worship"
                 className="w-full h-[350px] object-cover"
               />
