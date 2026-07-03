@@ -59,7 +59,7 @@ export function TheLeadPastor() {
     <div className="min-h-screen">
       <section className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
-          <ImageWithFallback src={photoUrl} alt={name} className="w-full h-full object-cover object-top" />
+          <ImageWithFallback src={photoUrl || '/images/lead-pastor-hero.jpg'} alt={name} className="w-full h-full object-cover object-top" />
         </div>
         <div className="absolute inset-0 bg-gradient-radial from-[#E8821A]/40 via-[#C94A1A]/50 to-[#7A1A0A]/60"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-[#1A0500]/70 to-[#1A0500]/80"></div>

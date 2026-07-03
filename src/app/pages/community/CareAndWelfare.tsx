@@ -48,7 +48,7 @@ export function CareAndWelfare() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1596450514537-fae68a81346b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGFyaXR5JTIwd2VsZmFyZSUyMGhlbHBpbmclMjBoYW5kcyUyMGNvbW11bml0eSUyMGNhcmV8ZW58MXx8fHwxNzc1MTI2Nzk2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            src="/images/care-and-welfare-hero.jpg"
             alt="Care and Welfare"
             className="w-full h-full object-cover"
           />
@@ -102,7 +102,7 @@ export function CareAndWelfare() {
             {/* Right - Image */}
             <div className="relative rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=600&fit=crop"
+                src="/images/care-and-welfare-hero.jpg"
                 alt="Care and Welfare"
                 className="w-full h-[400px] object-cover"
               />

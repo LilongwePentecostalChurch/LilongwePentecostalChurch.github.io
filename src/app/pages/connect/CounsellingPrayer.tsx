@@ -67,7 +67,7 @@ export function CounsellingPrayer() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1629338789670-630e71caea04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjBjb3Vuc2VsaW5nJTIwcGFzdG9yYWwlMjBjYXJlJTIwcHJheWVyfGVufDF8fHx8MTc3NTEyNjc5NXww&ixlib=rb-4.1.0&q=80&w=1080"
+            src="/images/counselling-prayer-hero.jpg"
             alt="Counselling and Prayer"
             className="w-full h-full object-cover"
           />
@@ -283,7 +283,7 @@ export function CounsellingPrayer() {
       <section 
         className="relative py-20 px-6 overflow-hidden"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=1200&h=600&fit=crop')`,
+          backgroundImage: `url('/images/counselling-prayer-hero.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}

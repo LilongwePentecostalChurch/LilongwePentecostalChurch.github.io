@@ -90,7 +90,7 @@ export function PlanYourVisit() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1748371915375-958214b72d91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            src="/images/plan-your-visit-hero.jpg"
             alt="Plan Your Visit"
             className="w-full h-full object-cover"
           />

@@ -132,6 +132,9 @@ export function Events() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <ImageWithFallback src="/images/events-hero.jpg" alt="Events" className="w-full h-full object-cover" />
+        </div>
         <div className="absolute inset-0 bg-gradient-radial from-[#E8821A]/50 via-[#C94A1A]/40 to-[#7A1A0A]/30"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#1A0500]/50"></div>
 

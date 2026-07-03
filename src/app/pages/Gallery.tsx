@@ -94,7 +94,7 @@ export function Gallery() {
       <section className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1762303928693-db677877afeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            src="/images/gallery-hero.jpg"
             alt="LPC Gallery"
             className="w-full h-full object-cover"
           />

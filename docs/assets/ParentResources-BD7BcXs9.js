@@ -1,0 +1,1 @@
+import{j as r}from"./index-MX521Eau.js";import{ParentResources as o}from"./ParentResources-CXXS8Srm.js";import"./ImageWithFallback-BiJvy_cQ.js";import"./sanityClient-DGmy6Kk4.js";import"./file-text-C3rvSk51.js";import"./eye-YhdU8KiE.js";function n(){return r.jsx(o,{})}export{n as ParentResources};

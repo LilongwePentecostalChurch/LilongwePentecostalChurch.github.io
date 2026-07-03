@@ -43,7 +43,7 @@ export function Staff() {
       <section className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1604443830970-05ac4193ada9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            src="/images/staff-hero.jpg"
             alt="Staff"
             className="w-full h-full object-cover"
           />

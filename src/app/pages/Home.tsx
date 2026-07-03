@@ -68,7 +68,7 @@ export function Home() {
           </div>
 
           {/* Social Follow Buttons */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-44 sm:mb-28 lg:mb-16 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 max-w-4xl mx-auto">
             <a
               href="https://www.tiktok.com/@llpentecostalchurch?is_from_webapp=1&sender_device=pc"
               target="_blank"
@@ -121,6 +121,10 @@ export function Home() {
               <SocialIcon platform={social.platform} size={18} />
             </a>
           ))}
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <LPCLogo size={90} />
         </div>
 
         <div className="absolute bottom-8 right-8 z-10 hidden lg:block text-right">

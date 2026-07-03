@@ -1,0 +1,1 @@
+import{j as e,o as a}from"./index-MX521Eau.js";function t(){return e.jsx(a,{title:"The Lead Pastor",description:"Shepherding the LPC family",breadcrumbs:[{label:"Home",path:"/"},{label:"Leadership",path:"/leadership"},{label:"The Lead Pastor"}]})}export{t as LeadPastor};

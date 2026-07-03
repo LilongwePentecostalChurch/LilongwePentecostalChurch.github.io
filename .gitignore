@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+sanity/node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment variables (contains real API keys — never commit)
+.env
+.env.local
+.env.*.local
+
+# Vite cache
+.vite/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
