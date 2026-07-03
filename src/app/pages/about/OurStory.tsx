@@ -69,6 +69,7 @@ export function OurStory() {
             src="/images/our-story-hero.jpg"
             alt="Our Story"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
         

@@ -93,6 +93,7 @@ export function PlanYourVisit() {
             src="/images/plan-your-visit-hero.jpg"
             alt="Plan Your Visit"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
         

@@ -54,6 +54,7 @@ export function WhatWeBelieve() {
             src="/images/what-we-believe-hero.jpg"
             alt="What We Believe"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
 

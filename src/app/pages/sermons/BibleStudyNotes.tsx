@@ -74,6 +74,7 @@ export function BibleStudyNotes() {
             src="https://images.unsplash.com/photo-1681158086111-59751fd44bf0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2h1cmNoJTIwd29yc2hpcCUyMGFsdGFyJTIwYmlibGUlMjBvcGVufGVufDF8fHx8MTc3NTEyNjQyN3ww&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Bible Study Notes"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-radial from-[#E8821A]/40 via-[#C94A1A]/50 to-[#7A1A0A]/60"></div>

@@ -70,6 +70,7 @@ export function CounsellingPrayer() {
             src="/images/counselling-prayer-hero.jpg"
             alt="Counselling and Prayer"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
 

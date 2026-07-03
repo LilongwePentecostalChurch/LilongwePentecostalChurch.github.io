@@ -51,6 +51,7 @@ export function CareAndWelfare() {
             src="/images/care-and-welfare-hero.jpg"
             alt="Care and Welfare"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
 

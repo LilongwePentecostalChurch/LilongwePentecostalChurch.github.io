@@ -132,7 +132,7 @@ export function Upcoming() {
       {/* Hero */}
       <section className="relative py-24 px-6 overflow-hidden">
         <div className="absolute inset-0">
-          <ImageWithFallback src="https://images.unsplash.com/photo-1762303928693-db677877afeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Upcoming Events" className="w-full h-full object-cover" />
+          <ImageWithFallback src="https://images.unsplash.com/photo-1762303928693-db677877afeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Upcoming Events" className="w-full h-full object-cover" fetchPriority="high" />
         </div>
         <div className="absolute inset-0 bg-gradient-radial from-[#E8821A]/40 via-[#C94A1A]/50 to-[#7A1A0A]/60"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-[#1A0500]/70 to-[#1A0500]/80"></div>

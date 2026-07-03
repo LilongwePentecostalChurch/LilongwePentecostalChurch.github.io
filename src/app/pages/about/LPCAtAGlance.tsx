@@ -119,6 +119,7 @@ export function LPCAtAGlance() {
             src="/images/lpc-at-a-glance-hero.jpg"
             alt="LPC At A Glance"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
 

@@ -91,9 +91,10 @@ export function Devotionals() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1527058554731-0ae094a267dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2hyaXN0aWFuJTIwZGV2b3Rpb25hbCUyMHByYXlleciUyMGpvdXJuYWx8ZW58MXx8fHwxNzc1MTI2NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            src="https://images.unsplash.com/photo-1527058554731-0ae094a267dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2hyaXN0aWFuJTIwZGV2b3Rpb25hbCUyMGpvdXJuYWx8ZW58MXx8fHwxNzc1MTI2NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Devotionals"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
 
