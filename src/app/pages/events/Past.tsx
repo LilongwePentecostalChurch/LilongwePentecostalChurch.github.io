@@ -65,6 +65,7 @@ export function Past() {
             src="https://images.unsplash.com/photo-1625426551028-d0180b87d771?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjBwYXN0JTIwZXZlbnRzJTIwY2VsZWJyYXRpb24lMjBtZW1vcmllc3xlbnwxfHx8fDE3NzUxMjY3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Past Events"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
 

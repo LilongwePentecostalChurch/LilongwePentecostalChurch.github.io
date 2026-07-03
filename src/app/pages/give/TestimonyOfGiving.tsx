@@ -13,6 +13,7 @@ export function TestimonyOfGiving() {
             src="https://images.unsplash.com/photo-1552633173-f7019bd12718?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjBnaXZpbmclMjB0ZXN0aW1vbnklMjBvZmZlcmluZyUyMGdlbmVyb3NpdHl8ZW58MXx8fHwxNzc1MTI2Nzk2fDA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Testimony of Giving"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
 

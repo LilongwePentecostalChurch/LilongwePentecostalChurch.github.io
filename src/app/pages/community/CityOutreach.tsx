@@ -33,6 +33,7 @@ export function CityOutreach() {
             src="/images/city-outreach-hero.jpg"
             alt="City Outreach"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
 
