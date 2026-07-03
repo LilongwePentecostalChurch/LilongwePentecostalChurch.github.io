@@ -51,7 +51,7 @@ export function Sermons() {
     <div className="min-h-screen">
       <section className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0">
-          <ImageWithFallback src="/images/sermons-hero.jpg" alt="Sermons" className="w-full h-full object-cover" fetchPriority="high" />
+          <ImageWithFallback src="/images/sermons-hero.jpg" alt="Sermons" className="w-full h-full object-cover" fetchPriority="high" style={{ objectPosition: 'center 40%' }} />
         </div>
         <div className="absolute inset-0 bg-gradient-radial from-[#C94A1A]/40 via-[#7A1A0A]/50 to-[#1A0500]"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMC4yIi8+PC9zdmc+')]"></div>

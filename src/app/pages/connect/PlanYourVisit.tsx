@@ -94,6 +94,7 @@ export function PlanYourVisit() {
             alt="Plan Your Visit"
             className="w-full h-full object-cover"
             fetchPriority="high"
+            style={{ objectPosition: 'center 30%' }}
           />
         </div>
         

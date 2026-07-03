@@ -55,6 +55,7 @@ export function ParentResources() {
             alt="Parent Resources"
             className="w-full h-full object-cover"
             fetchPriority="high"
+            style={{ objectPosition: 'center 45%' }}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-radial from-[#E8821A]/40 via-[#C94A1A]/50 to-[#7A1A0A]/60"></div>

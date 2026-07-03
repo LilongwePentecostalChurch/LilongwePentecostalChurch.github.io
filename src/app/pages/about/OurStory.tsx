@@ -70,6 +70,7 @@ export function OurStory() {
             alt="Our Story"
             className="w-full h-full object-cover"
             fetchPriority="high"
+            style={{ objectPosition: 'center 40%' }}
           />
         </div>
         

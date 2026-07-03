@@ -71,6 +71,7 @@ export function CounsellingPrayer() {
             alt="Counselling and Prayer"
             className="w-full h-full object-cover"
             fetchPriority="high"
+            style={{ objectPosition: 'center 35%' }}
           />
         </div>
 
