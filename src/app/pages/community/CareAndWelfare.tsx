@@ -52,6 +52,7 @@ export function CareAndWelfare() {
             alt="Care and Welfare"
             className="w-full h-full object-cover"
             fetchPriority="high"
+            style={{ objectPosition: 'center 30%' }}
           />
         </div>
 

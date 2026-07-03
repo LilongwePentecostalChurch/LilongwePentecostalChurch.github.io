@@ -48,6 +48,7 @@ export function About() {
                   src="/images/about-hero.jpg"
                   alt="Church Congregation"
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 35%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#7A1A0A] to-transparent"></div>
               </div>

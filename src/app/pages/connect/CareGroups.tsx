@@ -69,6 +69,7 @@ export function CareGroups() {
             alt="Care Groups"
             className="w-full h-full object-cover"
             fetchPriority="high"
+            style={{ objectPosition: 'center 30%' }}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#1A0500]/60 via-[#1A0500]/70 to-[#1A0500]/90" />

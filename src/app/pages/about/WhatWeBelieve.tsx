@@ -55,6 +55,7 @@ export function WhatWeBelieve() {
             alt="What We Believe"
             className="w-full h-full object-cover"
             fetchPriority="high"
+            style={{ objectPosition: 'center 30%' }}
           />
         </div>
 
